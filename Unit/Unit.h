@@ -17,13 +17,7 @@ class Unit {
     public:
         Unit();
         const char* getName() const ;
-        int getDamage() const;
-        int getHitPoints() const;
-        int getHitPointsLimit() const;
-
-        void setHitPoints(int value);
-        void setHitPointsLimit(int value);
-        void setDamage(int value);
+        State* getState() const;
 
         virtual void description() = 0;
         void attack(Unit* enemy);

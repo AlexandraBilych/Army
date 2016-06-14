@@ -2,6 +2,8 @@
 #define ABILITY_H
 
 #include "../Unit/Unit.h"
+#include "../Exceptions/Errors.h"
+
 #include <iostream>
 
 class Unit;

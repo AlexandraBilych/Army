@@ -2,7 +2,6 @@
 #define BASE_ATTACK_H
 
 #include "Ability.h"
-#include "../Exceptions/Errors.h"
 
 class BaseAttack : public Ability {
 

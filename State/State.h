@@ -4,7 +4,7 @@
 #include <iostream>
 
 class State {
-    public:
+    protected:
         int hitPoints;
         int hitPointsLimit;
         int damage;

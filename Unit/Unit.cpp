@@ -12,31 +12,12 @@ const char* Unit::getName() const {
     return name;
 }
 
-int Unit::getDamage() const {
-    return state->getDamage();
-}
-
-int Unit::getHitPoints() const {
-    return state->getHitPoints();
-}
-
-int Unit::getHitPointsLimit() const {
-    return state->getHitPointsLimit();
-}
-
-void Unit::setDamage(int value) {
-    state->setDamage(value);
-}
-
-void Unit::setHitPoints(int value) {
-    state->setHitPoints(value);
-}
-
-void Unit::setHitPointsLimit(int value) {
-    state->setHitPointsLimit(value);
+State* Unit::getState() const {
+    return state;
 }
 
 void Unit::attack(Unit* enemy) {
+    std::cout << "UNIT ATTACK" << std::endl;
     ability->attack(this, enemy);
 }
 
