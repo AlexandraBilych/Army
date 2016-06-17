@@ -8,42 +8,46 @@ void WolfAbility::attack(Wolf* attacker, Unit* enemy) {
         std::cout << "ATTACK WOLF - UNIT" << std::endl;
     }
 
+    enemy->ensureIsAlive();
     int newEnemyHitPoint = (enemy->getState())->getHitPoints() - (attacker->getState())->getDamage();
 
-    if ( (enemy->getState())->getHitPoints() == 0 ) {
-        throw UnitIsDead();
-    }
-    if ( newEnemyHitPoint < 0 ) {
-        (enemy->getState())->setHitPoints(0);
-    } else {
-        (enemy->getState())->setHitPoints(newEnemyHitPoint);
-        counterAttack(enemy, attacker);
-    }
+    (enemy->getState())->takeDamage(newEnemyHitPoint);
 
-    if ( !((Wolf*)enemy)->getIsWerewolf() ) {
+    enemy->ensureIsAlive();
+    if ( !(dynamic_cast<Wolf*>(enemy)->getIsWerewolf()) && !(dynamic_cast<AbstractVampire*>(enemy)->getIsVampire()) ){
         if ( DEBUG ) {
             std::cout << "CREATE NEW WEREWOLF" << std::endl;
         }
 
-        ((Wolf*)enemy)->setIsWerewolf(true);
+        (dynamic_cast<Wolf*>(enemy))->setIsWerewolf(true);
 
-        ((Wolf*)enemy)->setAltState(new WolfState((enemy->getState())->getHitPoints()*2, (enemy->getState())->getHitPointsLimit()*2, (enemy->getState())->getDamage()*2));
-        ((Wolf*)enemy)->setAltAbility(new WolfAbility());
+        (dynamic_cast<Wolf*>(enemy))->setAltState(new WolfState((enemy->getState())->getHitPoints()*2, (enemy->getState())->getHitPointsLimit()*2, (enemy->getState())->getDamage()*2));
+        (dynamic_cast<Wolf*>(enemy))->setAltAbility(new WolfAbility());
     }
+
+    enemy->counterAttack(attacker);
 }
 
 void WolfAbility::attack(Unit* attacker, Unit* enemy) {
-    attack((Wolf*)attacker, enemy);
+    attack(dynamic_cast<Wolf*>(attacker), enemy);
 }
 
-void WolfAbility::counterAttack(Unit* enemy, Wolf* attacker) {
+void WolfAbility::counterAttack(Unit* counterAttacker, Unit* enemy) {
+    std::cout << "WolfAbility WOLF_counterATTACK" << std::endl;
+    int newHitPoints = (enemy->getState())->getHitPoints() - (counterAttacker->getState())->getDamage()/2;
+
+    (enemy->getState())->takeDamage(newHitPoints);
+
     enemy->ensureIsAlive();
+    if ( !(dynamic_cast<Wolf*>(enemy)->getIsWerewolf()) && !(dynamic_cast<AbstractVampire*>(enemy)->getIsVampire()) ){
+        if ( DEBUG ) {
+            std::cout << "CREATE NEW WEREWOLF" << std::endl;
+        }
 
-    int newHitPoints = (attacker->getState())->getHitPoints() - (enemy->getState())->getDamage()/2;
+        (dynamic_cast<Wolf*>(enemy))->setIsWerewolf(true);
 
-    if ( newHitPoints < 0 ) {
-        (attacker->getState())->setHitPoints(0);
-    } else {
-        (attacker->getState())->setHitPoints(newHitPoints);
+        (dynamic_cast<Wolf*>(enemy))->setAltState(new WolfState((enemy->getState())->getHitPoints()*2, (enemy->getState())->getHitPointsLimit()*2, (enemy->getState())->getDamage()*2));
+        (dynamic_cast<Wolf*>(enemy))->setAltAbility(new WolfAbility());
     }
+
 }

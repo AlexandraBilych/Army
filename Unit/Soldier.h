@@ -2,12 +2,13 @@
 #define SOLDIER_H
 
 #include "Wolf.h"
+#include "AbstractVampire.h"
 #include "../State/SoldierState.h"
 #include "../Ability/BaseAttack.h"
 
-class Soldier : public Wolf {
+class Soldier : public Wolf, AbstractVampire {
     public:
-        Soldier(const char* name, int hp, int maxHp, int damage);
+        Soldier(const char* name, int maxHp, int damage);
         void description();
 };
 

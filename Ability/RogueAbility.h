@@ -1,15 +1,12 @@
-#ifndef BASE_ATTACK_H
-#define BASE_ATTACK_H
+#ifndef ROGUE_ATTACK_H
+#define ROGUE_ATTACK_H
 
 #include "Ability.h"
-#include "../Unit/Soldier.h"
 
-class Soldier;
-
-class BaseAttack : public Ability {
+class RogueAbility : public Ability {
 
     public:
-        BaseAttack() {};
+        RogueAbility() {};
         void attack(Unit* attacker, Unit* enemy);
         void counterAttack(Unit* counterAttacker, Unit* enemy);
 

@@ -18,9 +18,15 @@ class Unit {
         Unit();
         const char* getName() const ;
         State* getState() const;
+        Ability* getAbility() const;
+
+        void setState(State* value);
+        void setAbility(Ability* value);
 
         virtual void description() = 0;
-        void attack(Unit* enemy);
+
+        virtual void attack(Unit* enemy);
+        virtual void counterAttack(Unit* enemy);
         void ensureIsAlive();
 
 };

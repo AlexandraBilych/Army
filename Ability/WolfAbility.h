@@ -4,6 +4,7 @@
 #include "Ability.h"
 #include "../Unit/Wolf.h"
 #include "../State/WolfState.h"
+#include "../Unit/AbstractVampire.h"
 
 class WolfAbility : public Ability {
 
@@ -11,7 +12,7 @@ class WolfAbility : public Ability {
         WolfAbility() {};
         void attack(Unit* attacker, Unit* enemy);
         void attack(Wolf* attacker, Unit* enemy);
-        void counterAttack(Unit* enemy, Wolf* attacker);
+        void counterAttack(Unit* counterAttacker, Unit* enemy);
 
 };
 

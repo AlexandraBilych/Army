@@ -9,10 +9,6 @@ Wolf::Wolf() {
     isWerewolf = false;
 }
 
-void Wolf::attack(Wolf* enemy) {
-    ability->attack(this, enemy);
-}
-
 bool Wolf::getIsWerewolf() const {
     return isWerewolf;
 }

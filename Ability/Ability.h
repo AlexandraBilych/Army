@@ -12,7 +12,9 @@ class Ability {
     public:
         Ability();
         virtual void attack(Unit* attacker, Unit* enemy) = 0;
-        void counterAttack();
+        virtual void counterAttack(Unit* attacker, Unit* enemy) {
+                std::cout << "ABILITY COUNTER_ATTACK" << std::endl;
+        };
 
 };
 

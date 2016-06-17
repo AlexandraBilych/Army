@@ -3,12 +3,11 @@
 
 #include "Unit.h"
 
-class Wolf : public Unit {
+class Wolf : virtual public Unit {
     protected:
         State* altState;
         Ability* altAbility;
         bool isWerewolf;
-        bool wolfActive;
 
     public:
         Wolf();
@@ -22,7 +21,6 @@ class Wolf : public Unit {
         void setAltAbility(Ability* value);
         void setAltState(State* value);
 
-        void attack(Wolf* enemy);
         void transform();
 };
 

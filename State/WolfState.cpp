@@ -11,6 +11,15 @@ WolfState::WolfState(int hp, int maxHp, int damage) {
     this->damage = damage;
 }
 
+WolfState::WolfState(int maxHp, int damage) {
+    if ( DEBUG ) {
+        std::cout << "CONSTRUCTOR Wolf_STATE" << std::endl;
+    }
+    hitPoints = maxHp;
+    hitPointsLimit = maxHp;
+    this->damage = damage;
+}
+
 void WolfState::showState() {
     if ( DEBUG ) {
         std::cout << "Wolf_STATE ::showState" << std::endl;

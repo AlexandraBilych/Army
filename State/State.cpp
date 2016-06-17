@@ -31,3 +31,11 @@ void State::setHitPointsLimit(int value) {
 void State::setDamage(int value) {
     damage = value;
 }
+
+void State::takeDamage(int value) {
+    if ( value < 0 ) {
+        hitPoints = 0;
+    } else {
+        hitPoints = value;
+    }
+}

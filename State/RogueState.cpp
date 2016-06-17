@@ -1,22 +1,22 @@
-#include "SoldierState.h"
+#include "RogueState.h"
 
-#define DEBUG 0
+#define DEBUG 1
 
-SoldierState::SoldierState(int maxHp, int damage) {
+RogueState::RogueState(int maxHp, int damage) {
     if ( DEBUG ) {
-        std::cout << "CONSTRUCTOR SOLDIER_STATE" << std::endl;
+        std::cout << "CONSTRUCTOR ROGUE_STATE" << std::endl;
     }
     hitPoints = maxHp;
     hitPointsLimit = maxHp;
     this->damage = damage;
 }
 
-void SoldierState::showState() {
+void RogueState::showState() {
     if ( DEBUG ) {
-        std::cout << "SOLDIER_STATE ::showState" << std::endl;
+        std::cout << "ROGUE_STATE ::showState" << std::endl;
     }
 
-    std::cout << "I'm a Soldier." << std::endl;
+    std::cout << "I'm a Rogue." << std::endl;
     std::cout << "Damage: " << damage << ". Max hip points: " << hitPointsLimit << std::endl;
     std::cout << "Current hit points: " << hitPoints << std::endl;
     std::cout << "-----------------------------------" << std::endl;
