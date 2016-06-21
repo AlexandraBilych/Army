@@ -22,3 +22,4 @@ void BaseAttack::counterAttack(Unit* counterAttacker, Unit* enemy) {
 
     (enemy->getState())->takeDamage(newHitPoints);
 }
+

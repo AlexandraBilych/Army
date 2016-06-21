@@ -20,6 +20,10 @@ int State::getDamage() const {
     return damage;
 }
 
+int State::getMana() const {
+    return mana;
+}
+
 void State::setHitPoints(int value) {
     hitPoints = value;
 }
@@ -30,6 +34,10 @@ void State::setHitPointsLimit(int value) {
 
 void State::setDamage(int value) {
     damage = value;
+}
+
+void State::setMana(int value) {
+    mana = value;
 }
 
 void State::takeDamage(int value) {

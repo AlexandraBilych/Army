@@ -1,8 +1,4 @@
-#include "Unit/Soldier.h"
-#include "Unit/Vampire.h"
-#include "State/SoldierState.h"
-#include "Unit/Werewolf.h"
-#include "Unit/Rogue.h"
+#include "Header.h"
 #include <iostream>
 
 int main() {
@@ -113,6 +109,8 @@ int main() {
     // news->transform();
     // news->description();
 
+    // delete w;
+
 //WEREWOLF - ROGUE -- VAMPIRE
 
     // Werewolf* w = new Werewolf("Gara", 150, 20);
@@ -159,10 +157,48 @@ int main() {
     // w->description();
     // r->description();
 
-
     // delete w;
-    // delete s;
     // delete r;
+    // delete v;
+
+//WIZARD TEST
+
+    Wizard* wiz = new Wizard("Gendelf", 100, 5, 30);
+    wiz->addSpell("Cruciatus",new Cruciatus());
+    wiz->addSpell("AvadaKedavra", new AvadaKedavra());
+    wiz->description();
+    wiz->showSpellBook();
+
+
+    // std::cout << "\n-----------Attack(Wizard-Wizard)------------\n" << std::endl;
+    // Wizard* wiz2 = new Wizard("Demon", 100, 8, 30);
+    // wiz2->description();
+    // wiz2->melleAttack(wiz);
+    // wiz2->description();
+    // wiz->description();
+
+    // std::cout << "\n-----------Attack(Wizard-Wizard)------------\n" << std::endl;
+    // wiz->attack(wiz2);
+    // wiz2->description();
+    // wiz->description();
+
+
+    // std::cout << "\n-----------Attack(Soldier-Wizard)------------\n" << std::endl;
+    // s->attack(wiz);
+    // s->description();
+    // wiz->description();
+
+    //     // std::cout << "\n-----------Attack(Wizard-Soldier)------------\n" << std::endl;
+    // wiz->melleAttack(s);
+    // s->description();
+    // wiz->description();
+
+
+    delete wiz;
+
+
+    delete s;
+
 
     return 0;
 }
