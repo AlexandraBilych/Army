@@ -3,4 +3,8 @@
 
 class UnitIsDead {};
 
+class ManaIsNotEnough {};
+
+class NotApplyToSelfSpell{};
+
 #endif

@@ -163,38 +163,143 @@ int main() {
 
 //WIZARD TEST
 
-    Wizard* wiz = new Wizard("Gendelf", 100, 5, 30);
+    Wizard* wiz = new Wizard("Gendelf", 100, 5, 70);
+
     wiz->addSpell("Cruciatus",new Cruciatus());
     wiz->addSpell("AvadaKedavra", new AvadaKedavra());
+
     wiz->description();
-    wiz->showSpellBook();
+    // wiz->showSpellBook();
 
 
-    // std::cout << "\n-----------Attack(Wizard-Wizard)------------\n" << std::endl;
-    // Wizard* wiz2 = new Wizard("Demon", 100, 8, 30);
+    // // std::cout << "\n-----------Attack(Wizard-Wizard)------------\n" << std::endl;
+    // // Wizard* wiz2 = new Wizard("Demon", 100, 8, 30);
+    // // wiz2->description();
+    // // wiz2->melleAttack(wiz);
+    // // wiz2->description();
+    // // wiz->description();
+
+    // // std::cout << "\n-----------Attack(Wizard-Wizard)------------\n" << std::endl;
+    // // wiz->attack(wiz2);
+    // // wiz2->description();
+    // // wiz->description();
+
+
+    // // std::cout << "\n-----------Attack(Soldier-Wizard)------------\n" << std::endl;
+    // // s->attack(wiz);
+    // // s->description();
+    // // wiz->description();
+
+    // //     // std::cout << "\n-----------Attack(Wizard-Soldier)------------\n" << std::endl;
+    // // wiz->melleAttack(s);
+    // // s->description();
+    // // wiz->description();
+
+    // std::cout << "\n-----------Magic Attack------------\n" << std::endl;
+
+    // Wizard* wiz2 = new Wizard("Demon", 100, 8, 50);
+    // wiz2->addSpell("Cruciatus",new Cruciatus());
+    // wiz->addSpell("HealthRecovery",new HealthRecovery());
+    // wiz->showSpellBook();
+
     // wiz2->description();
-    // wiz2->melleAttack(wiz);
+    // std::cout << "\n-----------Attack(Wizard-Wizard) - spell Cruciatus------------\n" << std::endl;
+    // wiz2->spell("Cruciatus", wiz);
     // wiz2->description();
     // wiz->description();
 
-    // std::cout << "\n-----------Attack(Wizard-Wizard)------------\n" << std::endl;
-    // wiz->attack(wiz2);
+    // std::cout << "\n-----------Spell(Wizard) - HealthRecovery------------\n" << std::endl;
+    // wiz->spell("HealthRecovery");
+    // wiz->description();
+
+    // std::cout << "\n-----------Attack(Wizard-Wizard) - AvadaKedavra------------\n" << std::endl;
+    // wiz->spell("AvadaKedavra", wiz2);
     // wiz2->description();
     // wiz->description();
 
-
-    // std::cout << "\n-----------Attack(Soldier-Wizard)------------\n" << std::endl;
-    // s->attack(wiz);
+    // std::cout << "\n-----------Attack(Wizard-Soldier) - spell AvadaKedavra------------\n" << std::endl;
+    // wiz->spell("AvadaKedavra", s);
     // s->description();
     // wiz->description();
 
-    //     // std::cout << "\n-----------Attack(Wizard-Soldier)------------\n" << std::endl;
-    // wiz->melleAttack(s);
+    // delete wiz2;
+
+
+
+    // delete wiz;
+
+//HEALER TEST
+
+    Healer* h = new Healer("Doctor", 150, 5, 100);
+    h->addSpell("Cruciatus", new Cruciatus());
+    h->addSpell("HealthRecovery", new HealthRecovery);
+
+    h->description();
+    h->showSpellBook();
+
+    std::cout << "\n-----------melleAttack(HEALER-Wizard)------------\n" << std::endl;
+    h->melleAttack(wiz);
+    wiz->description();
+    h->description();
+
+    std::cout << "\n-----------HealthRecovery(HEALER)------------\n" << std::endl;
+    h->spell("HealthRecovery");
+    h->description();
+
+    std::cout << "\n-----------spell(Wizard-HEALER)------------\n" << std::endl;
+    wiz->spell("AvadaKedavra", h);
+    wiz->description();
+    h->description();
+
+    std::cout << "\n-----------Attack(Soldier-HEALER)------------\n" << std::endl;
+    s->attack(h);
+    s->description();
+    h->description();
+
+    std::cout << "\n-----------Spell(HEALER-Soldier)------------\n" << std::endl;
+    h->spell("Cruciatus", s);
+    s->description();
+    h->description();
+
+//BERSERKER TEST
+
+    // Berserker* b = new Berserker("Crazy", 200, 20);
+    // Wizard* wiz = new Wizard("Gendelf", 100, 5, 30);
+    // wiz->addSpell("Cruciatus",new Cruciatus());
+
+    // b->description();
+
+    // std::cout << "\n-----------Attack(Soldier-Berserker)------------\n" << std::endl;
+    // s->attack(b);
     // s->description();
+    // b->description();
+
+    // std::cout << "\n-----------Attack(Berserker-Soldier)------------\n" << std::endl;
+    // b->attack(s);
+    // s->description();
+    // b->description();
+
     // wiz->description();
 
+    // std::cout << "\n-----------Attack(Wizard-Berserker)------------\n" << std::endl;
+    // wiz->attack(b);
+    // wiz->description();
+    // b->description();
 
-    delete wiz;
+    // std::cout << "\n-----------Attack(Wizard-Berserker) -- Spell Cruciatus------------\n" << std::endl;
+    // wiz->spell("Cruciatus", b);
+    // wiz->description();
+    // b->description();
+
+    // std::cout << "\n-----------Attack(Berserker-Wizard)------------\n" << std::endl;
+    // b->attack(wiz);
+    // wiz->description();
+    // b->description();
+
+    // delete b;
+    // delete wiz;
+
+
 
 
     delete s;

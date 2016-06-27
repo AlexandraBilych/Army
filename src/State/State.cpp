@@ -28,6 +28,14 @@ void State::setHitPoints(int value) {
     hitPoints = value;
 }
 
+void State::recoveryHP(int value) {
+    if ( value + hitPoints > hitPointsLimit ) {
+        hitPoints = hitPointsLimit;
+    } else {
+        hitPoints += value;
+    }
+}
+
 void State::setHitPointsLimit(int value) {
     hitPointsLimit = value;
 }
@@ -40,10 +48,24 @@ void State::setMana(int value) {
     mana = value;
 }
 
+void State::checkMana(int value) {
+    if ( mana < value ) {
+        throw ManaIsNotEnough();
+    }
+}
+
 void State::takeDamage(int value) {
     if ( value < 0 ) {
         hitPoints = 0;
     } else {
         hitPoints = value;
+    }
+}
+
+void State::takeMagicDamage(int value) {
+    if ( hitPoints < value ) {
+        hitPoints = 0;
+    } else {
+        hitPoints -= value;
     }
 }

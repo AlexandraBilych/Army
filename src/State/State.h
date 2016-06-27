@@ -2,6 +2,7 @@
 #define STATE_H
 
 #include <iostream>
+#include "../Exceptions/Errors.h"
 
 class State {
     protected:
@@ -22,7 +23,10 @@ class State {
         void setDamage(int value);
         void setMana(int value);
 
+        void recoveryHP(int value);
+        void checkMana(int value);
         void takeDamage(int value);
+        virtual void takeMagicDamage(int value);
         virtual void showState() = 0;
 
 };

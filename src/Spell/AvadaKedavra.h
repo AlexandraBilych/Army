@@ -12,12 +12,9 @@ class AvadaKedavra : public Spell {
         AvadaKedavra();
         ~AvadaKedavra() {};
 
-        void attack(Spellcaster* attacker, Unit* enemy);
+        void spell(Spellcaster* attacker, Unit* enemy);
         void description() const;
 
-        AvadaKedavra operator*() const;
 };
-
-std::ostream& operator<<(std::ostream& out, const AvadaKedavra& avadaKedavra);
 
 #endif

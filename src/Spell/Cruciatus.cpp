@@ -4,27 +4,27 @@
 
 Cruciatus::Cruciatus () {
     spellName = "Cruciatus";
+    isCombatSpell = true;
 }
 
-void Cruciatus::attack(Spellcaster* attacker, Unit* enemy) {
+void Cruciatus::spell(Spellcaster* attacker, Unit* enemy) {
     if ( DEBUG ) {
         std::cout << "Cruciatus UNIT - UNIT" << std::endl;
     }
-//CheckMana
-    int newMana = ((attacker)->getState())->getMana() - cost;
-//ManaIsNotEnought
+    (attacker->getState())->checkMana(this->cost);
     enemy->ensureIsAlive();
-    int newEnemyHitPoint = (enemy->getState())->getHitPoints() - magicDamage;
 
-    (enemy->getState())->takeDamage(newEnemyHitPoint);
-    ((attacker)->getState())->setMana(newMana);
+    int newMana = (attacker->getState())->getMana() - cost;
+
+    if ( attacker->getIsCombatMage() ) {
+        (enemy->getState())->takeMagicDamage(magicDamage);
+    } else {
+        (enemy->getState())->takeMagicDamage(magicDamage/2);
+    }
+
+    (attacker->getState())->setMana(newMana);
 }
 
-std::ostream& operator<<(std::ostream& out, const Cruciatus* cruciatus) {
-
-    out << "Spell: " << cruciatus->getSpellName() << std::endl;
-    out << "Cost: " << Cruciatus::cost << std::endl;
-    out << "Damage: " << Cruciatus::magicDamage << std::endl;
-    out << "-----------------------------------" << std::endl;
-    return out;
+void Cruciatus::description() const {
+    std::cout << "Magic damage: " << this->magicDamage << "; Spell cost: " << this->cost << std::endl;
 }

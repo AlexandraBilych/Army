@@ -12,9 +12,8 @@ class Cruciatus : public Spell {
         Cruciatus();
         ~Cruciatus() {};
 
-        void attack(Spellcaster* attacker, Unit* enemy);
+        void spell(Spellcaster* attacker, Unit* enemy);
+        void description() const;
 };
-
-std::ostream& operator<<(std::ostream& out, const Cruciatus& cruciatus);
 
 #endif

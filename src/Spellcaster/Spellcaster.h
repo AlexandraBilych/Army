@@ -6,7 +6,6 @@
 #include "../State/State.h"
 #include "../Ability/Ability.h"
 #include "../Spell/Spell.h"
-#include "../Exceptions/Errors.h"
 #include <map>
 
 class Spell;
@@ -23,10 +22,9 @@ class Spellcaster : public Unit {
 
         void setIsCombatMage(bool value);
 
-        // virtual void spell(Spellcaster* enemy);
-        // virtual void spell(Unit* enemy);
+        virtual void spell(const char* spellName, Unit* enemy);
+        virtual void spell(const char* spellName);
 
-        // virtual void attack(Unit* enemy);
         void addSpell(const char*, Spell* spell);
         void showSpellBook();
         void showSpell(const char* value) const;

@@ -7,6 +7,7 @@ Wizard::Wizard(const char* name, int maxHp, int damage, int mana) {
         std::cout << "WIZARD::CONSTRUCTOR" << std::endl;
     }
 
+    isCombatMage = true;
     this->name = name;
     this->state = new WizardState(maxHp, damage, mana);
     this->ability = new BaseAttack();
@@ -17,8 +18,7 @@ void Wizard::description() {
         std::cout << "WIZARD::description" << std::endl;
     }
 
-    std::cout << isCombatMage << std::endl;
-    std::cout << "\nMy name is " << name << std::endl;
+    std::cout << "\nHealing mage - " << name << std::endl;
     state->showState();
 
 }

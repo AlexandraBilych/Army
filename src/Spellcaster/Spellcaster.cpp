@@ -6,6 +6,8 @@ Spellcaster::Spellcaster() {
     if ( DEBUG ) {
         std::cout << "CONSTRUCTOR SPELLCASTER" << std::endl;
     }
+
+    isCombatMage = false;
 }
 
 bool Spellcaster::getIsCombatMage() const{
@@ -16,20 +18,19 @@ void Spellcaster::setIsCombatMage(bool value) {
     isCombatMage = value;
 }
 
-// void Spellcaster::spell(Spellcaster* enemy) {
-//     std::cout << "Spellcaster SPELL" << std::endl;
-//     ability->attack(this, enemy);
-// }
+void Spellcaster::spell(const char* spellName, Unit* enemy) {
+    std::cout << "Spellcaster SPELL" << std::endl;
+    (spellBook.at(spellName))->spell(this, enemy);
+}
 
-// void Spellcaster::spell(Unit* enemy) {
-//     std::cout << "Spellcaster SPELL(UNIT)" << std::endl;
-//     ability->attack(this, enemy);
-// }
+void Spellcaster::spell(const char* spellName) {
+    std::cout << "Spellcaster SPELL" << std::endl;
+    if ( (spellBook.at(spellName))->getIsCombatSpell() ) {
+        throw NotApplyToSelfSpell();
+    }
 
-// void Spellcaster::attack(Spellcaster* enemy) {
-//     std::cout << "Spellcaster MELLEATTACK" << std::endl;
-//     ability->attack(this, enemy);
-// }
+    (spellBook.at(spellName))->spell(this, this);
+}
 
 void Spellcaster::addSpell(const char* spellName, Spell* spell) {
     spellBook.insert ( std::pair<const char*, Spell*>(spellName, spell) );
@@ -41,21 +42,24 @@ void Spellcaster::melleAttack(Unit* enemy) {
 }
 
 void Spellcaster::showSpell(const char* value) const {
-    std::cout << spellBook.at(value) << std::endl;
+    std::cout << value << " => ";
+    (spellBook.at(value))->description();
 }
 
 void Spellcaster::showSpellBook() {
+    std::cout << "Combat spells:";
     for (std::map<const char*, Spell*>::iterator it=spellBook.begin(); it!=spellBook.end(); ++it) {
-        std::cout << it->first << " => " << it->second << '\n';
+        if ( it->second->getIsCombatSpell() ) {
+            std::cout << it->first << " ";
+        }
     }
-}
-// void Spellcaster::counterAttack(Spellcaster* enemy) {
-//     std::cout << "Spellcaster COUNTER_ATTACK" << std::endl;
-//     ability->counterAttack(this, enemy);
-// }
 
-// void Spellcaster::ensureIsAlive() {
-//     if ( state->getHitPoints() == 0 ) {
-//         throw UnitIsDead();
-//     }
-// }
+    std::cout << "\nHealing spells:";
+    for (std::map<const char*, Spell*>::iterator it=spellBook.begin(); it!=spellBook.end(); ++it) {
+        if ( !it->second->getIsCombatSpell() ) {
+            std::cout << it->first << " ";
+        }
+    }
+
+    std::cout << "\n";
+}
