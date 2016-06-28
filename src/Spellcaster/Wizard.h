@@ -4,6 +4,7 @@
 #include "Spellcaster.h"
 #include "../State/WizardState.h"
 #include "../Ability/BaseAttack.h"
+#include "../Spell/Cruciatus.h"
 
 class Wizard: public Spellcaster {
     public:

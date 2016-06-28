@@ -28,3 +28,12 @@ void Cruciatus::spell(Spellcaster* attacker, Unit* enemy) {
 void Cruciatus::description() const {
     std::cout << "Magic damage: " << this->magicDamage << "; Spell cost: " << this->cost << std::endl;
 }
+
+Cruciatus* Cruciatus::instance = NULL;
+
+Cruciatus* Cruciatus::createSpell() {
+    if (!instance)
+        instance = new Cruciatus();
+
+    return instance;
+}

@@ -28,3 +28,12 @@ void HealthRecovery::spell(Spellcaster* self, Unit* lover) {
 void HealthRecovery::description() const {
     std::cout << "Magic damage: " << this->recoveredHP << "; Spell cost: " << this->cost << std::endl;
 }
+
+HealthRecovery* HealthRecovery::instance = NULL;
+
+HealthRecovery* HealthRecovery::createSpell() {
+    if (!instance)
+        instance = new HealthRecovery();
+
+    return instance;
+}

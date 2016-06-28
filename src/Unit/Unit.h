@@ -13,15 +13,18 @@ class Unit {
         const char* name;
         State* state;
         Ability* ability;
+        bool isUndead;
 
     public:
         Unit();
         const char* getName() const ;
         State* getState() const;
         Ability* getAbility() const;
+        bool getIsUndead() const;
 
         void setState(State* value);
         void setAbility(Ability* value);
+        void setIsUndead(bool value);
 
         virtual void description() = 0;
 

@@ -28,3 +28,12 @@ void AvadaKedavra::spell(Spellcaster* attacker, Unit* enemy) {
 void AvadaKedavra::description() const {
     std::cout << "Magic damage: " << this->magicDamage << "; Spell cost: " << this->cost << std::endl;
 }
+
+AvadaKedavra* AvadaKedavra::instance = NULL;
+
+AvadaKedavra* AvadaKedavra::createSpell() {
+    if (!instance)
+        instance = new AvadaKedavra();
+
+    return instance;
+}

@@ -9,7 +9,9 @@ Vampire::Vampire(const char* name, int maxHp, int damage) {
     this->name = name;
     this->state = new VampireState(maxHp, damage);
     this->ability = new VampireAbility();
+
     isVampire = true;
+    isUndead = true;
 }
 
 void Vampire::description() {

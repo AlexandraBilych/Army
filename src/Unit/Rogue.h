@@ -6,7 +6,7 @@
 #include "AbstractVampire.h"
 #include "../Ability/RogueAbility.h"
 
-class Rogue : public Wolf, AbstractVampire {
+class Rogue : public Wolf, public AbstractVampire {
     public:
         Rogue(const char* name, int maxHp, int damage);
         void description();

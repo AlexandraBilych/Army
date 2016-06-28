@@ -4,6 +4,7 @@
 #include "Spellcaster.h"
 #include "../State/HealerState.h"
 #include "../Ability/BaseAttack.h"
+#include "../Spell/HealthRecovery.h"
 
 class Healer: public Spellcaster {
     public:

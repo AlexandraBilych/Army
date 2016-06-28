@@ -11,6 +11,8 @@ Wizard::Wizard(const char* name, int maxHp, int damage, int mana) {
     this->name = name;
     this->state = new WizardState(maxHp, damage, mana);
     this->ability = new BaseAttack();
+
+    spellBook.insert ( std::pair<std::string, Spell*>("Cruciatus", Cruciatus::createSpell()));
 }
 
 void Wizard::description() {

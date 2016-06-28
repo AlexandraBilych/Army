@@ -7,4 +7,6 @@ class ManaIsNotEnough {};
 
 class NotApplyToSelfSpell{};
 
+class DemonSuperAttackIsUsed{};
+
 #endif

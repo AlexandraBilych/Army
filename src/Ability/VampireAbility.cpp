@@ -26,6 +26,7 @@ void VampireAbility::attack(AbstractVampire* attacker, Unit* enemy) {
         }
 
         (dynamic_cast<AbstractVampire*>(enemy))->setIsVampire(true);
+        (dynamic_cast<AbstractVampire*>(enemy))->setIsUndead(true);
 
         (dynamic_cast<AbstractVampire*>(enemy))->setState(new VampireState((enemy->getState())->getHitPoints(), (enemy->getState())->getHitPointsLimit(), (enemy->getState())->getDamage()));
         (dynamic_cast<AbstractVampire*>(enemy))->setAbility(new VampireAbility());
@@ -60,6 +61,7 @@ std::cout << newHitPoints << std::endl;
         }
 
         (dynamic_cast<AbstractVampire*>(enemy))->setIsVampire(true);
+        (dynamic_cast<AbstractVampire*>(enemy))->setIsUndead(true);
 
         (dynamic_cast<AbstractVampire*>(enemy))->setState(new VampireState((enemy->getState())->getHitPoints(), (enemy->getState())->getHitPointsLimit(), (enemy->getState())->getDamage()));
         (dynamic_cast<AbstractVampire*>(enemy))->setAbility(new VampireAbility());

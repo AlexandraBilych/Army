@@ -6,14 +6,18 @@
 #include "../State/State.h"
 #include "../Ability/Ability.h"
 #include "../Spell/Spell.h"
+
 #include <map>
+#include <set>
+#include "../Unit/Soldier.h"
 
 class Spell;
 
 class Spellcaster : public Unit {
     protected:
         bool isCombatMage;
-        std::map<const char*, Spell*> spellBook;
+        std::map<std::string, Spell*> spellBook;
+        // static std::set<std::string> content;
 
 
     public:
@@ -22,12 +26,12 @@ class Spellcaster : public Unit {
 
         void setIsCombatMage(bool value);
 
-        virtual void spell(const char* spellName, Unit* enemy);
-        virtual void spell(const char* spellName);
+        virtual void spell(std::string spellName, Unit* enemy);
+        virtual void spell(std::string spellName);
 
-        void addSpell(const char*, Spell* spell);
+        void addSpell(Spell* spell);
         void showSpellBook();
-        void showSpell(const char* value) const;
+        void showSpell(std::string value) const;
         virtual void melleAttack(Unit* enemy);
 
 };

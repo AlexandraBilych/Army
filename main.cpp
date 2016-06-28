@@ -163,17 +163,18 @@ int main() {
 
 //WIZARD TEST
 
-    Wizard* wiz = new Wizard("Gendelf", 100, 5, 70);
+    // Wizard* wiz = new Wizard("Gendelf", 100, 5, 70);
 
-    wiz->addSpell("Cruciatus",new Cruciatus());
-    wiz->addSpell("AvadaKedavra", new AvadaKedavra());
+    // wiz->addSpell(AvadaKedavra::createSpell());
 
-    wiz->description();
-    // wiz->showSpellBook();
+    // wiz->description();
+    // // wiz->showSpellBook();
 
 
-    // // std::cout << "\n-----------Attack(Wizard-Wizard)------------\n" << std::endl;
-    // // Wizard* wiz2 = new Wizard("Demon", 100, 8, 30);
+    // std::cout << "\n-----------Attack(Wizard-Wizard)------------\n" << std::endl;
+    // Wizard* wiz2 = new Wizard("Demon", 100, 8, 30);
+
+
     // // wiz2->description();
     // // wiz2->melleAttack(wiz);
     // // wiz2->description();
@@ -228,38 +229,141 @@ int main() {
 
     // delete wiz;
 
+//WARLOCK TEST
+
+    // Warlock* war = new Warlock("Master", 150, 10, 60);
+    // war->addSpell(Cruciatus::createSpell());
+    // war->addSpell(HealthRecovery::createSpell());
+    // war->addSpell(HealthRecovery::createSpell());
+
+    // war->description();
+    // war->showSpellBook();
+
+    // std::cout << "\n-----------melleAttack(HEALER-Wizard)------------\n" << std::endl;
+    // war->melleAttack(wiz);
+    // wiz->description();
+    // war->description();
+
+    // std::cout << "\n-----------HealthRecovery(HEALER)------------\n" << std::endl;
+    // war->spell("HealthRecovery");
+    // war->description();
+
+    // std::cout << "\n-----------spell(Wizard-HEALER)------------\n" << std::endl;
+    // wiz->spell("AvadaKedavra", war);
+    // wiz->description();
+    // war->description();
+
+    // std::cout << "\n-----------Attack(Soldier-HEALER)------------\n" << std::endl;
+    // s->attack(war);
+    // s->description();
+    // war->description();
+
+    // std::cout << "\n-----------Spell(Werewolf-Demon)------------\n" << std::endl;
+
+    // Demon* d = war->spell("SummonDemon", "Neyton");
+    // d->description();
+    // w->attack(d);
+    // d->description();
+    // w->description();
+    // war->description();
+
+    // std::cout << "\n-----------Spell(HEALER-Soldier)------------\n" << std::endl;
+
+    // Demon* d = war->spell("SummonDemon", "Neyton");
+    // d->description();
+    // d->superAttack(s);
+    // d->description();
+    // s->description();
+    // war->description();
+
 //HEALER TEST
 
-    Healer* h = new Healer("Doctor", 150, 5, 100);
-    h->addSpell("Cruciatus", new Cruciatus());
-    h->addSpell("HealthRecovery", new HealthRecovery);
+    // Healer* h = new Healer("Doctor", 150, 5, 100);
+    // h->addSpell("Cruciatus", new Cruciatus());
+    // h->addSpell("HealthRecovery", new HealthRecovery);
 
-    h->description();
-    h->showSpellBook();
+    // h->description();
+    // h->showSpellBook();
 
-    std::cout << "\n-----------melleAttack(HEALER-Wizard)------------\n" << std::endl;
-    h->melleAttack(wiz);
-    wiz->description();
-    h->description();
+    // std::cout << "\n-----------melleAttack(HEALER-Wizard)------------\n" << std::endl;
+    // h->melleAttack(wiz);
+    // wiz->description();
+    // h->description();
 
-    std::cout << "\n-----------HealthRecovery(HEALER)------------\n" << std::endl;
-    h->spell("HealthRecovery");
-    h->description();
+    // std::cout << "\n-----------HealthRecovery(HEALER)------------\n" << std::endl;
+    // h->spell("HealthRecovery");
+    // h->description();
 
-    std::cout << "\n-----------spell(Wizard-HEALER)------------\n" << std::endl;
-    wiz->spell("AvadaKedavra", h);
-    wiz->description();
-    h->description();
+    // std::cout << "\n-----------spell(Wizard-HEALER)------------\n" << std::endl;
+    // wiz->spell("AvadaKedavra", h);
+    // wiz->description();
+    // h->description();
 
-    std::cout << "\n-----------Attack(Soldier-HEALER)------------\n" << std::endl;
-    s->attack(h);
+    // std::cout << "\n-----------Attack(Soldier-HEALER)------------\n" << std::endl;
+    // s->attack(h);
+    // s->description();
+    // h->description();
+
+    // std::cout << "\n-----------Spell(HEALER-Soldier)------------\n" << std::endl;
+    // h->spell("Cruciatus", s);
+    // s->description();
+    // h->description();
+
+
+//PRIEST TEST
+
+    Priest* pr = new Priest("Papa", 100, 10, 70);
+
+    pr->addSpell(AvadaKedavra::createSpell());
+    pr->addSpell(HealthRecovery::createSpell());
+
+    pr->description();
+    pr->showSpellBook();
+
+    std::cout << "\n-----------Attack(Soldier-Priest)------------\n" << std::endl;
+    s->attack(pr);
     s->description();
-    h->description();
+    pr->description();
 
-    std::cout << "\n-----------Spell(HEALER-Soldier)------------\n" << std::endl;
-    h->spell("Cruciatus", s);
+    std::cout << "\n-----------Attack(Priest-Soldier)------------\n" << std::endl;
+    pr->melleAttack(s);
     s->description();
-    h->description();
+    pr->description();
+
+    std::cout << "\n-----------Magic Attack------------\n" << std::endl;
+
+    Wizard* wiz = new Wizard("Demon", 100, 8, 50);
+
+    wiz->description();
+    std::cout << "\n-----------Attack(Priest-Wizard) - spell Cruciatus------------\n" << std::endl;
+    pr->spell("Cruciatus", wiz);
+    wiz->description();
+    pr->description();
+
+    // std::cout << "\n-----------Spell(Priest) - HealthRecovery------------\n" << std::endl;
+    // pr->spell("HealthRecovery");
+    // pr->description();
+
+    Vampire* vam = new Vampire("Dragula", 130, 30);
+    vam->description();
+
+    std::cout << "\n-----------Attack(Wizard-Vampire) - AvadaKedavra------------\n" << std::endl;
+    pr->spell("AvadaKedavra", vam);
+    pr->description();
+    vam->description();
+
+    std::cout << "\n-----------Attack(Priest-Soldier)------------\n" << std::endl;
+    pr->spell("AvadaKedavra", s);
+    s->description();
+    pr->description();
+
+    // std::cout << "\n-----------Attack(Wizard-Soldier) - spell AvadaKedavra------------\n" << std::endl;
+    // wiz->spell("AvadaKedavra", s);
+    // s->description();
+    // wiz->description();
+
+    delete pr;
+    delete wiz;
 
 //BERSERKER TEST
 

@@ -4,15 +4,19 @@
 #include "Spell.h"
 
 class HealthRecovery : public Spell {
+    private:
+        HealthRecovery();
+        static HealthRecovery* instance;
+
     public:
         static const int cost = 10;
         static const int recoveredHP = 10;
 
-    public:
-        HealthRecovery();
         ~HealthRecovery() {};
 
-        void spell(Spellcaster* self, Unit* lover);
+        static HealthRecovery* createSpell();
+
+        void spell(Spellcaster* attacker, Unit* enemy);
         void description() const;
 };
 

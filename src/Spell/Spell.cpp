@@ -8,7 +8,7 @@ Spell::Spell() {
     }
 }
 
-const char* Spell::getSpellName() const {
+std::string Spell::getSpellName() const {
     return spellName;
 }
 
@@ -16,6 +16,8 @@ bool Spell::getIsCombatSpell() const {
     return isCombatSpell;
 }
 
-void Spell::setSpellName(const char* value) {
+void Spell::setSpellName(std::string value) {
     spellName = value;
 }
+
+

@@ -10,6 +10,8 @@ Healer::Healer(const char* name, int maxHp, int damage, int mana) {
     this->name = name;
     this->state = new HealerState(maxHp, damage, mana);
     this->ability = new BaseAttack();
+
+    spellBook.insert ( std::pair<const char*, Spell*>("HealthRecovery", HealthRecovery::createSpell()) );
 }
 
 void Healer::description() {

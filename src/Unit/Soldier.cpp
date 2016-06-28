@@ -9,6 +9,7 @@ Soldier::Soldier(const char* name, int maxHp, int damage) {
     this->name = name;
     this->state = new SoldierState(maxHp, damage);
     this->ability = new BaseAttack();
+
 }
 
 void Soldier::description() {

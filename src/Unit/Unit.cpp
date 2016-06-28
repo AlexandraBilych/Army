@@ -6,6 +6,8 @@ Unit::Unit() {
     if ( DEBUG ) {
         std::cout << "CONSTRUCTOR UNIT" << std::endl;
     }
+
+    isUndead = false;
 }
 
 const char* Unit::getName() const {
@@ -20,12 +22,20 @@ Ability* Unit::getAbility() const {
     return ability;
 }
 
+bool Unit::getIsUndead() const {
+    return isUndead;
+}
+
 void Unit::setState(State* value) {
     state = value;
 }
 
 void Unit::setAbility(Ability* value) {
     ability = value;
+}
+
+void Unit::setIsUndead(bool value) {
+    isUndead = value;
 }
 
 void Unit::attack(Unit* enemy) {

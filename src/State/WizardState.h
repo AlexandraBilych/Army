@@ -9,8 +9,6 @@ class WizardState : public State {
         WizardState(int maxHp, int damage, int mana);
         ~WizardState();
 
-        // void takeDamage(int value);
-        // void takeMagicDamage(int value);
         void showState();
 
 };
