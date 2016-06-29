@@ -11,13 +11,13 @@ class SummonDemon : public Spell {
         static SummonDemon* instance;
 
     public:
-        static const int cost = 20;
+        static const float cost;
 
         ~SummonDemon() {};
 
         static SummonDemon* createSpell();
 
-        void spell(Spellcaster* attacker, Unit* enemy);
+        void spell(Spellcaster* attacker, Unit* enemy) {};
         Demon* spell(Spellcaster* attacker, const char* demonName);
         void description() const;
 

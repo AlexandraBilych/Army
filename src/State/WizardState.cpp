@@ -2,7 +2,7 @@
 
 #define DEBUG 1
 
-WizardState::WizardState(int maxHp, int damage, int mana) {
+WizardState::WizardState(float maxHp, float damage, float mana) {
     if ( DEBUG ) {
         std::cout << "WizardState ::CONSTRUCTOR" << std::endl;
     }

@@ -11,7 +11,7 @@ class Warlock: public Spellcaster {
     public:
         using Spellcaster::spell;
 
-        Warlock(const char*name, int maxHp, int damage, int mana);
+        Warlock(const char*name, float maxHp, float damage, float mana);
         ~Warlock() {};
 
         Demon* spell(const char* spellName, const char* DemonName);

@@ -2,7 +2,7 @@
 
 #define DEBUG 1
 
-PriestState::PriestState(int maxHp, int damage, int mana) {
+PriestState::PriestState(float maxHp, float damage, float mana) {
     if ( DEBUG ) {
         std::cout << "PriestState ::CONSTRUCTOR" << std::endl;
     }

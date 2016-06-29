@@ -2,7 +2,7 @@
 
 #define DEBUG 0
 
-BerserkerState::BerserkerState(int maxHp, int damage) {
+BerserkerState::BerserkerState(float maxHp, float damage) {
     if ( DEBUG ) {
         std::cout << "CONSTRUCTOR BERSERKER_STATE" << std::endl;
     }
@@ -22,6 +22,6 @@ void BerserkerState::showState() {
     std::cout << "-----------------------------------" << std::endl;
 }
 
-void BerserkerState::takeMagicDamage(int value) {
+void BerserkerState::takeMagicDamage(float value) {
     std::cout << "Berserker has immune to a magic!" << std::endl;
 }

@@ -14,17 +14,22 @@ class Unit {
         State* state;
         Ability* ability;
         bool isUndead;
+        Unit* master;
 
     public:
         Unit();
+        ~Unit() {};
+
         const char* getName() const ;
         State* getState() const;
         Ability* getAbility() const;
         bool getIsUndead() const;
+        Unit* getMaster() const;
 
         void setState(State* value);
         void setAbility(Ability* value);
         void setIsUndead(bool value);
+        void setMaster(Unit* master);
 
         virtual void description() = 0;
 

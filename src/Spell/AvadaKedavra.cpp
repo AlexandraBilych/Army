@@ -14,7 +14,7 @@ void AvadaKedavra::spell(Spellcaster* attacker, Unit* enemy) {
     (attacker->getState())->checkMana(this->cost);
     enemy->ensureIsAlive();
 
-    int newMana = (attacker->getState())->getMana() - cost;
+    float newMana = (attacker->getState())->getMana() - cost;
 
     if ( attacker->getIsCombatMage() ) {
         (enemy->getState())->takeMagicDamage(magicDamage);
@@ -30,6 +30,8 @@ void AvadaKedavra::description() const {
 }
 
 AvadaKedavra* AvadaKedavra::instance = NULL;
+const float AvadaKedavra::cost = 30;
+const float AvadaKedavra::magicDamage = 50;
 
 AvadaKedavra* AvadaKedavra::createSpell() {
     if (!instance)

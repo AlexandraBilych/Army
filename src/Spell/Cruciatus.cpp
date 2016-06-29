@@ -1,3 +1,4 @@
+
 #include "Cruciatus.h"
 
 #define DEBUG 1
@@ -14,7 +15,7 @@ void Cruciatus::spell(Spellcaster* attacker, Unit* enemy) {
     (attacker->getState())->checkMana(this->cost);
     enemy->ensureIsAlive();
 
-    int newMana = (attacker->getState())->getMana() - cost;
+    float newMana = (attacker->getState())->getMana() - cost;
 
     if ( attacker->getIsCombatMage() ) {
         (enemy->getState())->takeMagicDamage(magicDamage);
@@ -30,6 +31,8 @@ void Cruciatus::description() const {
 }
 
 Cruciatus* Cruciatus::instance = NULL;
+const float Cruciatus::cost = 10;
+const float Cruciatus::magicDamage = 20;
 
 Cruciatus* Cruciatus::createSpell() {
     if (!instance)

@@ -9,8 +9,8 @@ class AvadaKedavra : public Spell {
         static AvadaKedavra* instance;
 
     public:
-        static const int cost = 30;
-        static const int magicDamage = 50;
+        static const float cost;
+        static const float magicDamage;
 
         ~AvadaKedavra() {};
 

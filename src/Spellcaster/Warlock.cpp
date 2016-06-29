@@ -2,7 +2,7 @@
 
 #define DEBUG 1
 
-Warlock::Warlock(const char* name, int maxHp, int damage, int mana) {
+Warlock::Warlock(const char* name, float maxHp, float damage, float mana) {
     if ( DEBUG ) {
         std::cout << "WARLOCK::CONSTRUCTOR" << std::endl;
     }
@@ -20,7 +20,7 @@ void Warlock::description() {
         std::cout << "WARLOCK::description" << std::endl;
     }
 
-    std::cout << "\nHealing mage - " << name << std::endl;
+    std::cout << "\nCombat mage - " << name << std::endl;
     state->showState();
 
 }
@@ -29,7 +29,6 @@ Demon* Warlock::spell(const char* spellName, const char* demonName) {
     if ( DEBUG ) {
         std::cout << "WARLOCK::SPELL SUMONDEMON" << std::endl;
     }
-    // (spellBook.at("SummonDemon"))->spell(this,this);
+
     return (dynamic_cast<SummonDemon*>(spellBook.at("SummonDemon")))->spell(this, demonName);
-    // return NULL;
 }

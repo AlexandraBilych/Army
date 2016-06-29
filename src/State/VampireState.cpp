@@ -2,7 +2,7 @@
 
 #define DEBUG 1
 
-VampireState::VampireState(int hp, int maxHp, int damage) {
+VampireState::VampireState(float hp, float maxHp, float damage) {
     if ( DEBUG ) {
         std::cout << "CONSTRUCTOR VAMPIRE_STATE" << std::endl;
     }
@@ -11,7 +11,7 @@ VampireState::VampireState(int hp, int maxHp, int damage) {
     this->damage = damage;
 }
 
-VampireState::VampireState(int maxHp, int damage) {
+VampireState::VampireState(float maxHp, float damage) {
     if ( DEBUG ) {
         std::cout << "CONSTRUCTOR VAMPIRE_STATE" << std::endl;
     }
@@ -20,7 +20,7 @@ VampireState::VampireState(int maxHp, int damage) {
     this->damage = damage;
 }
 
-void VampireState::setHitPoints(int value) {
+void VampireState::setHitPoints(float value) {
     value += hitPoints;
 
         if ( value > hitPointsLimit ) {

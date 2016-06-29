@@ -19,7 +19,6 @@ class Spell {
 
         virtual void spell(Spellcaster* attacker, Unit* enemy) = 0;
         virtual void description() const = 0;
-        //virtual Soldier* spell(Spellcaster* attacker, const char* demonName) {};
 };
 
 #endif

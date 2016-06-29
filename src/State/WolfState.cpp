@@ -2,7 +2,7 @@
 
 #define DEBUG 0
 
-WolfState::WolfState(int hp, int maxHp, int damage) {
+WolfState::WolfState(float hp, float maxHp, float damage) {
     if ( DEBUG ) {
         std::cout << "CONSTRUCTOR Wolf_STATE" << std::endl;
     }
@@ -11,7 +11,7 @@ WolfState::WolfState(int hp, int maxHp, int damage) {
     this->damage = damage;
 }
 
-WolfState::WolfState(int maxHp, int damage) {
+WolfState::WolfState(float maxHp, float damage) {
     if ( DEBUG ) {
         std::cout << "CONSTRUCTOR Wolf_STATE" << std::endl;
     }

@@ -2,7 +2,7 @@
 
 #define DEBUG 1
 
-Wizard::Wizard(const char* name, int maxHp, int damage, int mana) {
+Wizard::Wizard(const char* name, float maxHp, float damage, float mana) {
     if ( DEBUG ) {
         std::cout << "WIZARD::CONSTRUCTOR" << std::endl;
     }
@@ -20,7 +20,7 @@ void Wizard::description() {
         std::cout << "WIZARD::description" << std::endl;
     }
 
-    std::cout << "\nHealing mage - " << name << std::endl;
+    std::cout << "\nCombat mage - " << name << std::endl;
     state->showState();
 
 }

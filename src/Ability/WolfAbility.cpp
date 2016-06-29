@@ -9,7 +9,7 @@ void WolfAbility::attack(Wolf* attacker, Unit* enemy) {
     }
 
     enemy->ensureIsAlive();
-    int newEnemyHitPoint = (enemy->getState())->getHitPoints() - (attacker->getState())->getDamage();
+    float newEnemyHitPoint = (enemy->getState())->getHitPoints() - (attacker->getState())->getDamage();
 
     (enemy->getState())->takeDamage(newEnemyHitPoint);
 
@@ -34,7 +34,7 @@ void WolfAbility::attack(Unit* attacker, Unit* enemy) {
 
 void WolfAbility::counterAttack(Unit* counterAttacker, Unit* enemy) {
     std::cout << "WolfAbility WOLF_counterATTACK" << std::endl;
-    int newHitPoints = (enemy->getState())->getHitPoints() - (counterAttacker->getState())->getDamage()/2;
+    float newHitPoints = (enemy->getState())->getHitPoints() - (counterAttacker->getState())->getDamage()/2;
 
     (enemy->getState())->takeDamage(newHitPoints);
 

@@ -6,7 +6,7 @@
 class WizardState : public State {
 
     public:
-        WizardState(int maxHp, int damage, int mana);
+        WizardState(float maxHp, float damage, float mana);
         ~WizardState();
 
         void showState();

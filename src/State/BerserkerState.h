@@ -6,10 +6,10 @@
 class BerserkerState : public State {
 
     public:
-        BerserkerState(int maxHp, int damage);
+        BerserkerState(float maxHp, float damage);
         void showState();
 
-        void takeMagicDamage(int value);
+        void takeMagicDamage(float value);
 };
 
 #endif

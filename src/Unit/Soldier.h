@@ -11,7 +11,7 @@ class Soldier : public Wolf, public AbstractVampire {
         Soldier() {};
 
     public:
-        Soldier(const char* name, int maxHp, int damage);
+        Soldier(const char* name, float maxHp, float damage);
         void description();
 };
 

@@ -46,11 +46,6 @@ void Spellcaster::addSpell(Spell* spell) {
 
 }
 
-void Spellcaster::melleAttack(Unit* enemy) {
-    std::cout << "Spellcaster MELLEATTACK" << std::endl;
-    ability->attack(this, enemy);
-}
-
 void Spellcaster::showSpell(std::string value) const {
     std::cout << value << " => ";
     (spellBook.at(value))->description();

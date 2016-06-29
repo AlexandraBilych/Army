@@ -2,7 +2,7 @@
 
 #define DEBUG 1
 
-WarlockState::WarlockState(int maxHp, int damage, int mana) {
+WarlockState::WarlockState(float maxHp, float damage, float mana) {
     if ( DEBUG ) {
         std::cout << "WARLOCK_STATE ::CONSTRUCTOR" << std::endl;
     }

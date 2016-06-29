@@ -8,7 +8,7 @@
 
 class Healer: public Spellcaster {
     public:
-        Healer(const char*name, int maxHp, int damage, int mana);
+        Healer(const char*name, float maxHp, float damage, float mana);
         ~Healer() {};
 
         void description();

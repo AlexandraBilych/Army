@@ -6,7 +6,7 @@
 class PriestState : public State {
 
     public:
-        PriestState(int maxHp, int damage, int mana);
+        PriestState(float maxHp, float damage, float mana);
         ~PriestState();
 
         void showState();

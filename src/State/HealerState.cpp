@@ -2,7 +2,7 @@
 
 #define DEBUG 1
 
-HealerState::HealerState(int maxHp, int damage, int mana) {
+HealerState::HealerState(float maxHp, float damage, float mana) {
     if ( DEBUG ) {
         std::cout << "HealerState ::CONSTRUCTOR" << std::endl;
     }

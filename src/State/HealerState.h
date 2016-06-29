@@ -6,7 +6,7 @@
 class HealerState : public State {
 
     public:
-        HealerState(int maxHp, int damage, int mana);
+        HealerState(float maxHp, float damage, float mana);
         ~HealerState();
 
         void showState();

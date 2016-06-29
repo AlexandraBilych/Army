@@ -6,8 +6,8 @@
 class WolfState : public State {
 
     public:
-        WolfState(int hp, int maxHp, int damage);
-        WolfState(int maxHp, int damage);
+        WolfState(float hp, float maxHp, float damage);
+        WolfState(float maxHp, float damage);
         void showState();
 
 };

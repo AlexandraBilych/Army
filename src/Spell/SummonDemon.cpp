@@ -7,20 +7,6 @@ SummonDemon::SummonDemon () {
     isCombatSpell = true;
 }
 
-void SummonDemon::spell(Spellcaster* attacker, Unit* enemy) {
-    if ( DEBUG ) {
-        std::cout << "SummonDemon Spellcaster - UNIT" << std::endl;
-    }
-    // (attacker->getState())->checkMana(this->cost);
-    // enemy->ensureIsAlive();
-
-    // int newMana = (attacker->getState())->getMana() - cost;
-
-
-
-    // (attacker->getState())->setMana(newMana);
-}
-
 Demon* SummonDemon::spell(Spellcaster* attacker, const char* demonName) {
     if ( DEBUG ) {
         std::cout << "Demon* SummonDemon Spellcaster" << std::endl;
@@ -28,7 +14,7 @@ Demon* SummonDemon::spell(Spellcaster* attacker, const char* demonName) {
 
     (attacker->getState())->checkMana(this->cost);
 
-    int newMana = (attacker->getState())->getMana() - cost;
+    float newMana = (attacker->getState())->getMana() - cost;
 
     (attacker->getState())->setMana(newMana);
 
@@ -40,6 +26,7 @@ void SummonDemon::description() const {
 }
 
 SummonDemon* SummonDemon::instance = NULL;
+const float SummonDemon::cost = 20;
 
 SummonDemon* SummonDemon::createSpell() {
     if (!instance)

@@ -6,27 +6,27 @@
 
 class State {
     protected:
-        int hitPoints;
-        int hitPointsLimit;
-        int damage;
-        int mana;
+        float hitPoints;
+        float hitPointsLimit;
+        float damage;
+        float mana;
 
     public:
         State();
-        int getHitPoints() const;
-        int getHitPointsLimit() const;
-        int getDamage() const;
-        int getMana() const;
+        float getHitPoints() const;
+        float getHitPointsLimit() const;
+        float getDamage() const;
+        float getMana() const;
 
-        virtual void setHitPoints(int value);
-        void setHitPointsLimit(int value);
-        void setDamage(int value);
-        void setMana(int value);
+        virtual void setHitPoints(float value);
+        void setHitPointsLimit(float value);
+        void setDamage(float value);
+        void setMana(float value);
 
-        void recoveryHP(int value);
-        void checkMana(int value);
-        void takeDamage(int value);
-        virtual void takeMagicDamage(int value);
+        void recoveryHP(float value);
+        void checkMana(float value);
+        void takeDamage(float value);
+        virtual void takeMagicDamage(float value);
         virtual void showState() = 0;
 
 };

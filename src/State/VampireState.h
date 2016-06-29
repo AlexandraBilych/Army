@@ -6,10 +6,10 @@
 class VampireState : public State {
 
     public:
-        VampireState(int hp, int maxHp, int damage);
-        VampireState(int maxHp, int damage);
+        VampireState(float hp, float maxHp, float damage);
+        VampireState(float maxHp, float damage);
 
-        void setHitPoints(int value);
+        void setHitPoints(float value);
         void showState();
 
 };

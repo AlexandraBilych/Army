@@ -9,7 +9,7 @@
 class Vampire : public AbstractVampire, public Wolf {
 
     public:
-        Vampire(const char* name, int maxHp, int damage);
+        Vampire(const char* name, float maxHp, float damage);
         ~Vampire() {};
 
         void description();

@@ -19,5 +19,3 @@ bool Spell::getIsCombatSpell() const {
 void Spell::setSpellName(std::string value) {
     spellName = value;
 }
-
-

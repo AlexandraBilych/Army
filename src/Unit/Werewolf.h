@@ -9,7 +9,7 @@
 
 class Werewolf : public Wolf {
     public:
-        Werewolf(const char* name, int maxHp, int damage);
+        Werewolf(const char* name, float maxHp, float damage);
         ~Werewolf() {};
 
         void description();

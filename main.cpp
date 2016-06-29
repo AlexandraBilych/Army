@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main() {
-    Soldier* s = new Soldier("Rick", 100, 50);
+    Soldier* s = new Soldier("Rick", 30, 30);
     s->description();
 
 
@@ -312,58 +312,88 @@ int main() {
 
 //PRIEST TEST
 
-    Priest* pr = new Priest("Papa", 100, 10, 70);
+    // Priest* pr = new Priest("Papa", 100, 10, 70);
 
-    pr->addSpell(AvadaKedavra::createSpell());
-    pr->addSpell(HealthRecovery::createSpell());
+    // pr->addSpell(AvadaKedavra::createSpell());
+    // pr->addSpell(HealthRecovery::createSpell());
 
-    pr->description();
-    pr->showSpellBook();
+    // pr->description();
+    // pr->showSpellBook();
 
-    std::cout << "\n-----------Attack(Soldier-Priest)------------\n" << std::endl;
-    s->attack(pr);
-    s->description();
-    pr->description();
+    // std::cout << "\n-----------Attack(Soldier-Priest)------------\n" << std::endl;
+    // s->attack(pr);
+    // s->description();
+    // pr->description();
 
-    std::cout << "\n-----------Attack(Priest-Soldier)------------\n" << std::endl;
-    pr->melleAttack(s);
-    s->description();
-    pr->description();
+    // std::cout << "\n-----------Attack(Priest-Soldier)------------\n" << std::endl;
+    // pr->melleAttack(s);
+    // s->description();
+    // pr->description();
 
-    std::cout << "\n-----------Magic Attack------------\n" << std::endl;
+    // std::cout << "\n-----------Magic Attack------------\n" << std::endl;
 
-    Wizard* wiz = new Wizard("Demon", 100, 8, 50);
+    // Wizard* wiz = new Wizard("Demon", 100, 8, 50);
 
-    wiz->description();
-    std::cout << "\n-----------Attack(Priest-Wizard) - spell Cruciatus------------\n" << std::endl;
-    pr->spell("Cruciatus", wiz);
-    wiz->description();
-    pr->description();
+    // wiz->description();
+    // std::cout << "\n-----------Attack(Priest-Wizard) - spell Cruciatus------------\n" << std::endl;
+    // pr->spell("Cruciatus", wiz);
+    // wiz->description();
+    // pr->description();
 
     // std::cout << "\n-----------Spell(Priest) - HealthRecovery------------\n" << std::endl;
     // pr->spell("HealthRecovery");
     // pr->description();
 
-    Vampire* vam = new Vampire("Dragula", 130, 30);
-    vam->description();
+    // Vampire* vam = new Vampire("Dragula", 130, 30);
+    // vam->description();
 
-    std::cout << "\n-----------Attack(Wizard-Vampire) - AvadaKedavra------------\n" << std::endl;
-    pr->spell("AvadaKedavra", vam);
-    pr->description();
-    vam->description();
+    // std::cout << "\n-----------Attack(Wizard-Vampire) - AvadaKedavra------------\n" << std::endl;
+    // pr->spell("AvadaKedavra", vam);
+    // pr->description();
+    // vam->description();
 
-    std::cout << "\n-----------Attack(Priest-Soldier)------------\n" << std::endl;
-    pr->spell("AvadaKedavra", s);
-    s->description();
-    pr->description();
+    // std::cout << "\n-----------Attack(Priest-Soldier)------------\n" << std::endl;
+    // pr->spell("AvadaKedavra", s);
+    // s->description();
+    // pr->description();
 
     // std::cout << "\n-----------Attack(Wizard-Soldier) - spell AvadaKedavra------------\n" << std::endl;
     // wiz->spell("AvadaKedavra", s);
     // s->description();
     // wiz->description();
 
-    delete pr;
-    delete wiz;
+    // delete pr;
+    // delete wiz;
+
+
+
+//NECROMANCER TEST
+
+    Necromancer* h = new Necromancer("Dead", 150, 5, 100);
+    h->addSpell(HealthRecovery::createSpell());
+
+    h->description();
+    h->showSpellBook();
+
+    std::cout << "\n-----------Attack(Soldier-Necromancer)------------\n" << std::endl;
+    s->attack(h);
+    s->description();
+    h->description();
+
+    std::cout << "\n-----------MagicAttack(Necromancer-Soldier)------------\n" << std::endl;
+    h->spell("Cruciatus", s);
+    s->description();
+    h->description();
+
+    std::cout << "\n-----------Attack(Soldier-Soldier)------------\n" << std::endl;
+    Soldier* assassin = new Soldier("Assassin", 15, 100);
+    assassin->description();
+    assassin->attack(s);
+    s->description();
+    assassin->description();
+    h->description();
+
+
 
 //BERSERKER TEST
 

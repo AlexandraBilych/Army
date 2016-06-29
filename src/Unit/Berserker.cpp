@@ -2,7 +2,7 @@
 
 #define DEBUG 1
 
-Berserker::Berserker(const char* name, int maxHp, int damage) {
+Berserker::Berserker(const char* name, float maxHp, float damage) {
     if ( DEBUG ) {
         std::cout << "CONSTRUCTOR BERSERKER" << std::endl;
     }

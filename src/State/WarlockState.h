@@ -6,7 +6,7 @@
 class WarlockState : public State {
 
     public:
-        WarlockState(int maxHp, int damage, int mana);
+        WarlockState(float maxHp, float damage, float mana);
         ~WarlockState();
 
         void showState();

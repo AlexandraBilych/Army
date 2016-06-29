@@ -17,8 +17,6 @@ class Spellcaster : public Unit {
     protected:
         bool isCombatMage;
         std::map<std::string, Spell*> spellBook;
-        // static std::set<std::string> content;
-
 
     public:
         Spellcaster();
@@ -32,7 +30,6 @@ class Spellcaster : public Unit {
         void addSpell(Spell* spell);
         void showSpellBook();
         void showSpell(std::string value) const;
-        virtual void melleAttack(Unit* enemy);
 
 };
 

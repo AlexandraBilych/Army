@@ -9,8 +9,8 @@ class HealthRecovery : public Spell {
         static HealthRecovery* instance;
 
     public:
-        static const int cost = 10;
-        static const int recoveredHP = 10;
+        static const float cost;
+        static const float recoveredHP;
 
         ~HealthRecovery() {};
 

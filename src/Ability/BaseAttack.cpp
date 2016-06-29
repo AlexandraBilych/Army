@@ -7,18 +7,24 @@ void BaseAttack::attack(Unit* attacker, Unit* enemy) {
         std::cout << "BASEATTACK UNIT - UNIT" << std::endl;
     }
 
-    enemy->ensureIsAlive();
-    int newEnemyHitPoint = (enemy->getState())->getHitPoints() - (attacker->getState())->getDamage();
+    try {
+        enemy->ensureIsAlive();
 
-    (enemy->getState())->takeDamage(newEnemyHitPoint);
+        float newEnemyHitPoint = (enemy->getState())->getHitPoints() - (attacker->getState())->getDamage();
 
-    enemy->ensureIsAlive();
-    enemy->counterAttack(attacker);
+        (enemy->getState())->takeDamage(newEnemyHitPoint);
+        enemy->ensureIsAlive();
+        enemy->counterAttack(attacker);
+
+    } catch ( UnitIsDead e ) {
+        std::cout << enemy->getName() << " is died!" << std::endl;
+    }
+
 }
 
 void BaseAttack::counterAttack(Unit* counterAttacker, Unit* enemy) {
     std::cout << "BASEATTACK COUNTER_ATTACK" << std::endl;
-    int newHitPoints = (enemy->getState())->getHitPoints() - (counterAttacker->getState())->getDamage()/2;
+    float newHitPoints = (enemy->getState())->getHitPoints() - (counterAttacker->getState())->getDamage()/2;
 
     (enemy->getState())->takeDamage(newHitPoints);
 }

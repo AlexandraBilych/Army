@@ -2,7 +2,7 @@
 
 #define DEBUG 0
 
-SoldierState::SoldierState(int maxHp, int damage) {
+SoldierState::SoldierState(float maxHp, float damage) {
     if ( DEBUG ) {
         std::cout << "CONSTRUCTOR SOLDIER_STATE" << std::endl;
     }

@@ -8,27 +8,27 @@ State::State() {
     }
 }
 
-int State::getHitPoints() const {
+float State::getHitPoints() const {
     return hitPoints;
 }
 
-int State::getHitPointsLimit() const {
+float State::getHitPointsLimit() const {
     return hitPointsLimit;
 }
 
-int State::getDamage() const {
+float State::getDamage() const {
     return damage;
 }
 
-int State::getMana() const {
+float State::getMana() const {
     return mana;
 }
 
-void State::setHitPoints(int value) {
+void State::setHitPoints(float value) {
     hitPoints = value;
 }
 
-void State::recoveryHP(int value) {
+void State::recoveryHP(float value) {
     if ( value + hitPoints > hitPointsLimit ) {
         hitPoints = hitPointsLimit;
     } else {
@@ -36,25 +36,25 @@ void State::recoveryHP(int value) {
     }
 }
 
-void State::setHitPointsLimit(int value) {
+void State::setHitPointsLimit(float value) {
     hitPointsLimit = value;
 }
 
-void State::setDamage(int value) {
+void State::setDamage(float value) {
     damage = value;
 }
 
-void State::setMana(int value) {
+void State::setMana(float value) {
     mana = value;
 }
 
-void State::checkMana(int value) {
+void State::checkMana(float value) {
     if ( mana < value ) {
         throw ManaIsNotEnough();
     }
 }
 
-void State::takeDamage(int value) {
+void State::takeDamage(float value) {
     if ( value < 0 ) {
         hitPoints = 0;
     } else {
@@ -62,7 +62,7 @@ void State::takeDamage(int value) {
     }
 }
 
-void State::takeMagicDamage(int value) {
+void State::takeMagicDamage(float value) {
     if ( hitPoints < value ) {
         hitPoints = 0;
     } else {

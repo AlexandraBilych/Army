@@ -7,6 +7,7 @@
 #include "src/Spellcaster/Warlock.h"
 #include "src/Spellcaster/Healer.h"
 #include "src/Spellcaster/Priest.h"
+#include "src/Spellcaster/Necromancer.h"
 #include "src/Spell/Cruciatus.h"
 #include "src/Spell/HealthRecovery.h"
 #include "src/Spell/AvadaKedavra.h"

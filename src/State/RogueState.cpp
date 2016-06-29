@@ -2,7 +2,7 @@
 
 #define DEBUG 1
 
-RogueState::RogueState(int maxHp, int damage) {
+RogueState::RogueState(float maxHp, float damage) {
     if ( DEBUG ) {
         std::cout << "CONSTRUCTOR ROGUE_STATE" << std::endl;
     }

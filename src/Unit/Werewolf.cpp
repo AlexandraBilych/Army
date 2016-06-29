@@ -2,7 +2,7 @@
 
 #define DEBUG 0
 
-Werewolf::Werewolf(const char* name, int maxHp, int damage) {
+Werewolf::Werewolf(const char* name, float maxHp, float damage) {
     if ( DEBUG ) {
         std::cout << "CONSTRUCTOR WOLF" << std::endl;
     }

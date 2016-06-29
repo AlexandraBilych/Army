@@ -2,7 +2,7 @@
 
 #define DEBUG 1
 
-Healer::Healer(const char* name, int maxHp, int damage, int mana) {
+Healer::Healer(const char* name, float maxHp, float damage, float mana) {
     if ( DEBUG ) {
         std::cout << "HEALER::CONSTRUCTOR" << std::endl;
     }

@@ -26,6 +26,10 @@ bool Unit::getIsUndead() const {
     return isUndead;
 }
 
+Unit* Unit::getMaster() const {
+    return master;
+}
+
 void Unit::setState(State* value) {
     state = value;
 }
@@ -36,6 +40,10 @@ void Unit::setAbility(Ability* value) {
 
 void Unit::setIsUndead(bool value) {
     isUndead = value;
+}
+
+void Unit::setMaster(Unit* master) {
+    this->master = master;
 }
 
 void Unit::attack(Unit* enemy) {
@@ -50,6 +58,12 @@ void Unit::counterAttack(Unit* enemy) {
 
 void Unit::ensureIsAlive() {
     if ( state->getHitPoints() == 0 ) {
+        if ( master ) {
+            (master->getState())->recoveryHP(state->getHitPointsLimit()*0.1);
+            std::cout << state->getHitPointsLimit()*0.1;
+        }
+        master = NULL;
+
         throw UnitIsDead();
     }
 }

@@ -9,8 +9,8 @@ class Cruciatus : public Spell {
         static Cruciatus* instance;
 
     public:
-        static const int cost = 10;
-        static const int magicDamage = 20;
+        static const float cost;
+        static const float magicDamage;
 
         ~Cruciatus() {};
 

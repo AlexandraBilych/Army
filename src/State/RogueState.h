@@ -6,7 +6,7 @@
 class RogueState : public State {
 
     public:
-        RogueState(int maxHp, int damage);
+        RogueState(float maxHp, float damage);
         void showState();
 
 };

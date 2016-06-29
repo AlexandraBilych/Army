@@ -6,7 +6,7 @@
 class SoldierState : public State {
 
     public:
-        SoldierState(int maxHp, int damage);
+        SoldierState(float maxHp, float damage);
         void showState();
 
 };

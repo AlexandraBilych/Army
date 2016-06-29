@@ -4,11 +4,11 @@
 #include "Spellcaster.h"
 #include "../State/PriestState.h"
 #include "../Ability/BaseAttack.h"
-#include "../Spell/Cruciatus.h"
+#include "../Spell/HealthRecovery.h"
 
 class Priest: public Spellcaster {
     public:
-        Priest(const char*name, int maxHp, int damage, int mana);
+        Priest(const char*name, float maxHp, float damage, float mana);
         ~Priest() {};
 
         void description();

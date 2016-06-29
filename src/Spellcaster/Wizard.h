@@ -8,7 +8,7 @@
 
 class Wizard: public Spellcaster {
     public:
-        Wizard(const char*name, int maxHp, int damage, int mana);
+        Wizard(const char*name, float maxHp, float damage, float mana);
         ~Wizard() {};
 
         void description();

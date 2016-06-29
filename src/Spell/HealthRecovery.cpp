@@ -14,7 +14,7 @@ void HealthRecovery::spell(Spellcaster* self, Unit* lover) {
     (self->getState())->checkMana(this->cost);
     lover->ensureIsAlive();
 
-    int newMana = (self->getState())->getMana() - cost;
+    float newMana = (self->getState())->getMana() - cost;
 
     if ( self->getIsCombatMage() ) {
         (lover->getState())->recoveryHP(recoveredHP/2);
@@ -30,6 +30,8 @@ void HealthRecovery::description() const {
 }
 
 HealthRecovery* HealthRecovery::instance = NULL;
+const float HealthRecovery::cost = 10;
+const float HealthRecovery::recoveredHP = 10;
 
 HealthRecovery* HealthRecovery::createSpell() {
     if (!instance)

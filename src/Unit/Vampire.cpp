@@ -2,7 +2,7 @@
 
 #define DEBUG 1
 
-Vampire::Vampire(const char* name, int maxHp, int damage) {
+Vampire::Vampire(const char* name, float maxHp, float damage) {
     if ( DEBUG ) {
         std::cout << "CONSTRUCTOR VAMPIRE" << std::endl;
     }
