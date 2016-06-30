@@ -7,22 +7,22 @@ HealthRecovery::HealthRecovery () {
     isCombatSpell = false;
 }
 
-void HealthRecovery::spell(Spellcaster* self, Unit* lover) {
+void HealthRecovery::castSpell(Spellcaster& self, Unit& lover) {
     if ( DEBUG ) {
         std::cout << "HealthRecovery Spellcaster" << std::endl;
     }
-    (self->getState())->checkMana(this->cost);
-    lover->ensureIsAlive();
+    (self.getState()).checkMana(this->cost);
+    lover.ensureIsAlive();
 
-    float newMana = (self->getState())->getMana() - cost;
+    float newMana = (self.getState()).getMana() - cost;
 
-    if ( self->getIsCombatMage() ) {
-        (lover->getState())->recoveryHP(recoveredHP/2);
+    if ( self.getIsCombatMage() ) {
+        (lover.getState()).recoveryHP(recoveredHP/2);
     } else {
-        (lover->getState())->recoveryHP(recoveredHP);
+        (lover.getState()).recoveryHP(recoveredHP);
     }
 
-    (self->getState())->setMana(newMana);
+    (self.getState()).setMana(newMana);
 }
 
 void HealthRecovery::description() const {

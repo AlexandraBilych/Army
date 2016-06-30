@@ -9,12 +9,12 @@
 
 class Warlock: public Spellcaster {
     public:
-        using Spellcaster::spell;
+        using Spellcaster::castSpell;
 
-        Warlock(const char*name, float maxHp, float damage, float mana);
+        Warlock(const std::string& name, float maxHp, float damage, float mana);
         ~Warlock() {};
 
-        Demon* spell(const char* spellName, const char* DemonName);
+        Demon* castSpell(const std::string& spellName, const std::string& DemonName);
         void description();
 };
 

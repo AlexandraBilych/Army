@@ -7,8 +7,8 @@ class RogueAbility : public Ability {
 
     public:
         RogueAbility() {};
-        void attack(Unit* attacker, Unit* enemy);
-        void counterAttack(Unit* counterAttacker, Unit* enemy);
+        void attack(Unit& attacker, Unit& enemy);
+        void counterAttack(Unit& counterAttacker, Unit& enemy);
 
 };
 

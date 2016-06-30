@@ -6,9 +6,11 @@ Spell::Spell() {
     if ( DEBUG ) {
         std::cout << "SPELL CONSTRUCTOR" << std::endl;
     }
+
+    isShareSpell = false;
 }
 
-std::string Spell::getSpellName() const {
+const std::string& Spell::getSpellName() const {
     return spellName;
 }
 
@@ -16,6 +18,10 @@ bool Spell::getIsCombatSpell() const {
     return isCombatSpell;
 }
 
-void Spell::setSpellName(std::string value) {
+bool Spell::getIsShareSpell() const {
+    return isShareSpell;
+}
+
+void Spell::setSpellName(const std::string& value) {
     spellName = value;
 }

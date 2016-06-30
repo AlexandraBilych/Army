@@ -10,9 +10,9 @@ class Demon : public Soldier {
         bool superAttackIsReady;
 
     public:
-        Demon(const char* name, float maxHp = 100, float damage = 10);
+        Demon(const std::string& name, float maxHp = 100, float damage = 10);
 
-        void superAttack(Unit* enemy);
+        void superAttack(Unit& enemy);
         void description();
 };
 

@@ -24,12 +24,12 @@ class Spellcaster : public Unit {
 
         void setIsCombatMage(bool value);
 
-        virtual void spell(std::string spellName, Unit* enemy);
-        virtual void spell(std::string spellName);
+        virtual void castSpell(const std::string& spellName, Unit& enemy);
+        virtual void castSpell(const std::string& spellName);
 
         void addSpell(Spell* spell);
         void showSpellBook();
-        void showSpell(std::string value) const;
+        void showSpell(const std::string& value) const;
 
 };
 

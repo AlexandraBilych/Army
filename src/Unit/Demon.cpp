@@ -2,7 +2,7 @@
 
 #define DEBUG 1
 
-Demon::Demon(const char* name, float maxHp, float damage) {
+Demon::Demon(const std::string& name, float maxHp, float damage) {
     if ( DEBUG ) {
         std::cout << "CONSTRUCTOR Demon" << std::endl;
     }
@@ -23,7 +23,7 @@ void Demon::description() {
     state->showState();
 }
 
-void Demon::superAttack(Unit* enemy) {
+void Demon::superAttack(Unit& enemy) {
     std::cout << "Demon magicAttack" << std::endl;
 
     if ( !superAttackIsReady) {
@@ -31,7 +31,7 @@ void Demon::superAttack(Unit* enemy) {
     }
 
     state->setDamage(state->getDamage()*2);
-    ability->attack(this, enemy);
+    ability->attack(*this, enemy);
 
     state->setDamage(state->getDamage()/2);
     superAttackIsReady = false;

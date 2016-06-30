@@ -2,7 +2,7 @@
 
 #define DEBUG 1
 
-Healer::Healer(const char* name, float maxHp, float damage, float mana) {
+Healer::Healer(const std::string& name, float maxHp, float damage, float mana) {
     if ( DEBUG ) {
         std::cout << "HEALER::CONSTRUCTOR" << std::endl;
     }
@@ -11,7 +11,7 @@ Healer::Healer(const char* name, float maxHp, float damage, float mana) {
     this->state = new HealerState(maxHp, damage, mana);
     this->ability = new BaseAttack();
 
-    spellBook.insert ( std::pair<const char*, Spell*>("HealthRecovery", HealthRecovery::createSpell()) );
+    spellBook.insert ( std::pair<std::string, Spell*>("HealthRecovery", HealthRecovery::createSpell()) );
 }
 
 void Healer::description() {

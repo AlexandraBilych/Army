@@ -16,7 +16,7 @@ class AvadaKedavra : public Spell {
 
         static AvadaKedavra* createSpell();
 
-        void spell(Spellcaster* attacker, Unit* enemy);
+        void castSpell(Spellcaster& attacker, Unit& enemy);
         void description() const;
 
 };

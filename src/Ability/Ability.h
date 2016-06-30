@@ -12,8 +12,8 @@ class Spellcaster;
 class Ability {
     public:
         Ability();
-        virtual void attack(Unit* attacker, Unit* enemy) = 0;
-        virtual void counterAttack(Unit* attacker, Unit* enemy) {};
+        virtual void attack(Unit& attacker, Unit& enemy) = 0;
+        virtual void counterAttack(Unit& attacker, Unit& enemy) = 0;
 
 };
 

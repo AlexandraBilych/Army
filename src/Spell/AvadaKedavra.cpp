@@ -7,22 +7,22 @@ AvadaKedavra::AvadaKedavra () {
     isCombatSpell = true;
 }
 
-void AvadaKedavra::spell(Spellcaster* attacker, Unit* enemy) {
+void AvadaKedavra::castSpell(Spellcaster& attacker, Unit& enemy) {
     if ( DEBUG ) {
         std::cout << "AvadaKedavra UNIT - UNIT" << std::endl;
     }
-    (attacker->getState())->checkMana(this->cost);
-    enemy->ensureIsAlive();
+    (attacker.getState()).checkMana(this->cost);
+    enemy.ensureIsAlive();
 
-    float newMana = (attacker->getState())->getMana() - cost;
+    float newMana = (attacker.getState()).getMana() - cost;
 
-    if ( attacker->getIsCombatMage() ) {
-        (enemy->getState())->takeMagicDamage(magicDamage);
+    if ( attacker.getIsCombatMage() ) {
+        (enemy.getState()).takeMagicDamage(magicDamage);
     } else {
-        (enemy->getState())->takeMagicDamage(magicDamage/2);
+        (enemy.getState()).takeMagicDamage(magicDamage/2);
     }
 
-    (attacker->getState())->setMana(newMana);
+    (attacker.getState()).setMana(newMana);
 }
 
 void AvadaKedavra::description() const {

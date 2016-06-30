@@ -7,17 +7,19 @@ class Spell {
     protected:
         std::string spellName;
         bool isCombatSpell;
+        bool isShareSpell;
 
     public:
         Spell();
         ~Spell() {};
 
-        std::string getSpellName() const;
+        const std::string& getSpellName() const;
         bool getIsCombatSpell() const;
+        bool getIsShareSpell() const;
 
-        void setSpellName(std::string value);
+        void setSpellName(const std::string& value);
 
-        virtual void spell(Spellcaster* attacker, Unit* enemy) = 0;
+        virtual void castSpell(Spellcaster& attacker, Unit& enemy) = 0;
         virtual void description() const = 0;
 };
 

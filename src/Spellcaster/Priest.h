@@ -8,11 +8,11 @@
 
 class Priest: public Spellcaster {
     public:
-        Priest(const char*name, float maxHp, float damage, float mana);
+        Priest(const std::string& name, float maxHp, float damage, float mana);
         ~Priest() {};
 
         void description();
-        void spell(std::string spellName, Unit* enemy);
+        void castSpell(const std::string& spellName, Unit& enemy);
 };
 
 #endif

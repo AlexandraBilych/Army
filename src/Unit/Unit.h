@@ -10,7 +10,7 @@ class Ability;
 
 class Unit {
     protected:
-        const char* name;
+        std::string name;
         State* state;
         Ability* ability;
         bool isUndead;
@@ -20,11 +20,11 @@ class Unit {
         Unit();
         ~Unit() {};
 
-        const char* getName() const ;
-        State* getState() const;
-        Ability* getAbility() const;
+        const std::string& getName() const ;
+        State& getState() const;
+        Ability& getAbility() const;
         bool getIsUndead() const;
-        Unit* getMaster() const;
+        Unit& getMaster() const;
 
         void setState(State* value);
         void setAbility(Ability* value);
@@ -33,8 +33,8 @@ class Unit {
 
         virtual void description() = 0;
 
-        virtual void attack(Unit* enemy);
-        virtual void counterAttack(Unit* enemy);
+        virtual void attack(Unit& enemy);
+        virtual void counterAttack(Unit& enemy);
         void ensureIsAlive();
 
 };

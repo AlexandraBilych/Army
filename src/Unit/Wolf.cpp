@@ -35,7 +35,7 @@ void Wolf::setAltState(State* value) {
 
 void Wolf::transform() {
     if ( isWerewolf ) {
-        float newAltHitPoints = getState()->getHitPoints()*getAltState()->getHitPointsLimit()/getState()->getHitPointsLimit();
+        float newAltHitPoints = getState().getHitPoints()*getAltState()->getHitPointsLimit()/getState().getHitPointsLimit();
         Ability* tempAbility = altAbility;
         State* tempState = altState;
 

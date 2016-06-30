@@ -12,9 +12,9 @@ class VampireAbility : public Ability {
     public:
         VampireAbility() {};
 
-        void attack(Unit* attacker, Unit* enemy);
-        void attack(AbstractVampire* attacker, Unit* enemy);
-        void counterAttack(Unit* counterAttacker, Unit* enem);
+        void attack(Unit& attacker, Unit& enemy);
+        void attack(AbstractVampire& attacker, Unit& enemy);
+        void counterAttack(Unit& counterAttacker, Unit& enem);
 
 };
 

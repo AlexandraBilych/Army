@@ -8,7 +8,7 @@
 
 class Rogue : public Wolf, public AbstractVampire {
     public:
-        Rogue(const char* name, float maxHp, float damage);
+        Rogue(const std::string& name, float maxHp, float damage);
         void description();
 };
 

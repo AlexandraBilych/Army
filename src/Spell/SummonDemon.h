@@ -17,8 +17,8 @@ class SummonDemon : public Spell {
 
         static SummonDemon* createSpell();
 
-        void spell(Spellcaster* attacker, Unit* enemy) {};
-        Demon* spell(Spellcaster* attacker, const char* demonName);
+        void castSpell(Spellcaster& attacker, Unit& enemy) {};
+        Demon* castSpell(Spellcaster& attacker, const std::string& demonName);
         void description() const;
 
 };

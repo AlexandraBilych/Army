@@ -5,18 +5,19 @@
 SummonDemon::SummonDemon () {
     spellName = "SummonDemon";
     isCombatSpell = true;
+    isShareSpell = true;
 }
 
-Demon* SummonDemon::spell(Spellcaster* attacker, const char* demonName) {
+Demon* SummonDemon::castSpell(Spellcaster& attacker, const std::string& demonName) {
     if ( DEBUG ) {
         std::cout << "Demon* SummonDemon Spellcaster" << std::endl;
     }
 
-    (attacker->getState())->checkMana(this->cost);
+    (attacker.getState()).checkMana(this->cost);
 
-    float newMana = (attacker->getState())->getMana() - cost;
+    float newMana = (attacker.getState()).getMana() - cost;
 
-    (attacker->getState())->setMana(newMana);
+    (attacker.getState()).setMana(newMana);
 
     return new Demon(demonName);
 }

@@ -16,7 +16,7 @@ class HealthRecovery : public Spell {
 
         static HealthRecovery* createSpell();
 
-        void spell(Spellcaster* attacker, Unit* enemy);
+        void castSpell(Spellcaster& attacker, Unit& enemy);
         void description() const;
 };
 

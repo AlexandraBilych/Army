@@ -2,7 +2,7 @@
 
 #define DEBUG 1
 
-Wizard::Wizard(const char* name, float maxHp, float damage, float mana) {
+Wizard::Wizard(const std::string& name, float maxHp, float damage, float mana) {
     if ( DEBUG ) {
         std::cout << "WIZARD::CONSTRUCTOR" << std::endl;
     }

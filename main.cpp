@@ -376,19 +376,19 @@ int main() {
     h->showSpellBook();
 
     std::cout << "\n-----------Attack(Soldier-Necromancer)------------\n" << std::endl;
-    s->attack(h);
+    s->attack(*h);
     s->description();
     h->description();
 
     std::cout << "\n-----------MagicAttack(Necromancer-Soldier)------------\n" << std::endl;
-    h->spell("Cruciatus", s);
+    h->castSpell("Cruciatus", *s);
     s->description();
     h->description();
 
     std::cout << "\n-----------Attack(Soldier-Soldier)------------\n" << std::endl;
     Soldier* assassin = new Soldier("Assassin", 15, 100);
     assassin->description();
-    assassin->attack(s);
+    assassin->attack(*s);
     s->description();
     assassin->description();
     h->description();

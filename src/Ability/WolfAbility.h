@@ -10,9 +10,9 @@ class WolfAbility : public Ability {
 
     public:
         WolfAbility() {};
-        void attack(Unit* attacker, Unit* enemy);
-        void attack(Wolf* attacker, Unit* enemy);
-        void counterAttack(Unit* counterAttacker, Unit* enemy);
+        void attack(Unit& attacker, Unit& enemy);
+        void attack(Wolf& attacker, Unit& enemy);
+        void counterAttack(Unit& counterAttacker, Unit& enemy);
 
 };
 

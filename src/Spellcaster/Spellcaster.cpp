@@ -19,18 +19,18 @@ void Spellcaster::setIsCombatMage(bool value) {
     isCombatMage = value;
 }
 
-void Spellcaster::spell(std::string spellName, Unit* enemy) {
+void Spellcaster::castSpell(const std::string& spellName, Unit& enemy) {
     std::cout << "Spellcaster SPELL-UNIT" << std::endl;
-    (spellBook.at(spellName))->spell(this, enemy);
+    (spellBook.at(spellName))->castSpell(*this, enemy);
 }
 
-void Spellcaster::spell(std::string spellName) {
+void Spellcaster::castSpell(const std::string& spellName) {
     std::cout << "Spellcaster SPELL*" << std::endl;
     if ( (spellBook.at(spellName))->getIsCombatSpell() ) {
         throw NotApplyToSelfSpell();
     }
 
-    (spellBook.at(spellName))->spell(this, this);
+    (spellBook.at(spellName))->castSpell(*this, *this);
 }
 
 void Spellcaster::addSpell(Spell* spell) {
@@ -38,15 +38,15 @@ void Spellcaster::addSpell(Spell* spell) {
         std::cout << "\t\taddSpell" << std::endl;
     }
 
-    try {
-        spellBook.insert ( std::pair<std::string, Spell*>(spell->getSpellName(), spell) );
-    } catch (...) {
-        std::cout << "Exception" << std::endl;
+    if ( spell->getIsShareSpell() ) {
+        throw NotShareSpell();
     }
+
+    spellBook.insert ( std::pair<std::string, Spell*>(spell->getSpellName(), spell));
 
 }
 
-void Spellcaster::showSpell(std::string value) const {
+void Spellcaster::showSpell(const std::string& value) const {
     std::cout << value << " => ";
     (spellBook.at(value))->description();
 }
@@ -68,5 +68,3 @@ void Spellcaster::showSpellBook() {
 
     std::cout << "\n";
 }
-
-// std::set<std::string> Spellcaster::content = ("Cruciatus", "AvadaKedavra", "HealthRecovery", "SummonDemon");

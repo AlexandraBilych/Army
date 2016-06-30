@@ -2,7 +2,7 @@
 
 #define DEBUG 1
 
-Rogue::Rogue(const char* name, float maxHp, float damage) {
+Rogue::Rogue(const std::string& name, float maxHp, float damage) {
     if ( DEBUG ) {
         std::cout << "CONSTRUCTOR ROGUE" << std::endl;
     }
