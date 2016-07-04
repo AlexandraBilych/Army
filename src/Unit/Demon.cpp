@@ -1,6 +1,6 @@
 #include "Demon.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 Demon::Demon(const std::string& name, float maxHp, float damage) {
     if ( DEBUG ) {
@@ -8,10 +8,19 @@ Demon::Demon(const std::string& name, float maxHp, float damage) {
     }
     this->name = name;
     this->state = new SoldierState(maxHp, damage);
-    this->ability = new BaseAttack();
+    this->ability = BaseAttack::createInstance();
 
     superAttackIsReady = true;
     isVampire = true;
+}
+
+Demon::~Demon(){
+    if ( DEBUG ) {
+        std::cout << "DECONSTRUCTOR DEMON" << std::endl;
+    }
+
+    delete state;
+
 }
 
 void Demon::description() {
@@ -24,8 +33,6 @@ void Demon::description() {
 }
 
 void Demon::superAttack(Unit& enemy) {
-    std::cout << "Demon magicAttack" << std::endl;
-
     if ( !superAttackIsReady) {
         throw DemonSuperAttackIsUsed();
     }

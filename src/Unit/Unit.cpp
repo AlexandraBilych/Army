@@ -1,6 +1,6 @@
 #include "Unit.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 Unit::Unit() {
     if ( DEBUG ) {
@@ -47,12 +47,10 @@ void Unit::setMaster(Unit* master) {
 }
 
 void Unit::attack(Unit& enemy) {
-    std::cout << "UNIT ATTACK" << std::endl;
     ability->attack(*this, enemy);
 }
 
 void Unit::counterAttack(Unit& enemy) {
-    std::cout << "UNIT COUNTER_ATTACK" << std::endl;
     ability->counterAttack(*this, enemy);
 }
 
@@ -60,7 +58,6 @@ void Unit::ensureIsAlive() {
     if ( state->getHitPoints() == 0 ) {
         if ( master ) {
             (master->state)->recoveryHP(state->getHitPointsLimit()*0.1);
-            std::cout << state->getHitPointsLimit()*0.1;
         }
         master = NULL;
 

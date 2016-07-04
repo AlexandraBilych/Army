@@ -2,7 +2,7 @@
 #define WARLOK_H
 
 #include "Spellcaster.h"
-#include "../State/WarlockState.h"
+#include "../State/SpellcasterState.h"
 #include "../Ability/BaseAttack.h"
 #include "../Unit/Demon.h"
 #include "../Spell/SummonDemon.h"

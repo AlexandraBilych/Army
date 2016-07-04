@@ -2,7 +2,7 @@
 #define WIZARD_H
 
 #include "Spellcaster.h"
-#include "../State/WizardState.h"
+#include "../State/SpellcasterState.h"
 #include "../Ability/BaseAttack.h"
 #include "../Spell/Cruciatus.h"
 

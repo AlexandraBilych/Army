@@ -7,13 +7,16 @@
 #include "../Unit/AbstractVampire.h"
 
 class WolfAbility : public Ability {
+private:
+        static WolfAbility* instance;
+        WolfAbility() {};
 
     public:
-        WolfAbility() {};
         void attack(Unit& attacker, Unit& enemy);
         void attack(Wolf& attacker, Unit& enemy);
         void counterAttack(Unit& counterAttacker, Unit& enemy);
 
+        static WolfAbility* createInstance();
 };
 
 #endif

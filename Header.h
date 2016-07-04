@@ -3,6 +3,7 @@
 #include "src/Unit/Werewolf.h"
 #include "src/Unit/Rogue.h"
 #include "src/Unit/Berserker.h"
+#include "src/Unit/Demon.h"
 #include "src/Spellcaster/Wizard.h"
 #include "src/Spellcaster/Warlock.h"
 #include "src/Spellcaster/Healer.h"
@@ -11,4 +12,3 @@
 #include "src/Spell/Cruciatus.h"
 #include "src/Spell/HealthRecovery.h"
 #include "src/Spell/AvadaKedavra.h"
-#include "src/Unit/Demon.h"

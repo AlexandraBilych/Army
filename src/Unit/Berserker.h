@@ -9,6 +9,8 @@
 class Berserker : public Wolf, public AbstractVampire {
     public:
         Berserker(const std::string& name, float maxHp, float damage);
+        ~Berserker();
+
         void description();
 };
 

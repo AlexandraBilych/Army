@@ -1,6 +1,6 @@
 #include "Ability.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 Ability::Ability() {
     if ( DEBUG ) {

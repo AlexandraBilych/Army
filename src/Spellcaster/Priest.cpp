@@ -1,6 +1,6 @@
 #include "Priest.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 Priest::Priest(const std::string& name, float maxHp, float damage, float mana) {
     if ( DEBUG ) {
@@ -8,8 +8,8 @@ Priest::Priest(const std::string& name, float maxHp, float damage, float mana) {
     }
 
     this->name = name;
-    this->state = new PriestState(maxHp, damage, mana);
-    this->ability = new BaseAttack();
+    this->state = new SpellcasterState(maxHp, damage, mana);
+    this->ability = BaseAttack::createInstance();
 
     spellBook.insert ( std::pair<std::string, Spell*>("HealthRecovery", HealthRecovery::createSpell()) );
 }
@@ -19,20 +19,22 @@ void Priest::description() {
         std::cout << "Priest::description" << std::endl;
     }
 
-    std::cout << "\nHealing mage - " << name << std::endl;
+    std::cout << "\nHealing mage - " << name << ". I'm priest." << std::endl;
     state->showState();
 
 }
 
 void Priest::castSpell(const std::string& spellName, Unit& enemy) {
-    std::cout << "Priest SPELL" << std::endl;
-
     float mana = state->getMana();
+    try {
+        if ( (spellBook.at(spellName))->getIsCombatSpell() && enemy.getIsUndead() ) {
+            (spellBook.at(spellName))->castSpell(*this, enemy);
+            state->setMana(mana);
+        }
 
-    if ( (spellBook.at(spellName))->getIsCombatSpell() && enemy.getIsUndead() ) {
         (spellBook.at(spellName))->castSpell(*this, enemy);
-        state->setMana(mana);
+    } catch ( std::out_of_range& e ) {
+        std::cout << this->getName() << " don't have spell \"" << spellName << "\" in SpellBook!" << std::endl;
+        showSpellBook();
     }
-
-    (spellBook.at(spellName))->castSpell(*this, enemy);
 }

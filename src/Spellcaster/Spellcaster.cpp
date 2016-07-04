@@ -1,6 +1,6 @@
 #include "Spellcaster.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 Spellcaster::Spellcaster() {
     if ( DEBUG ) {
@@ -20,17 +20,25 @@ void Spellcaster::setIsCombatMage(bool value) {
 }
 
 void Spellcaster::castSpell(const std::string& spellName, Unit& enemy) {
-    std::cout << "Spellcaster SPELL-UNIT" << std::endl;
-    (spellBook.at(spellName))->castSpell(*this, enemy);
+    try {
+        (spellBook.at(spellName))->castSpell(*this, enemy);
+    } catch ( std::out_of_range& e ) {
+        std::cout << this->getName() << " don't have spell \"" << spellName << "\" in SpellBook!" << std::endl;
+        showSpellBook();
+    }
 }
 
 void Spellcaster::castSpell(const std::string& spellName) {
-    std::cout << "Spellcaster SPELL*" << std::endl;
-    if ( (spellBook.at(spellName))->getIsCombatSpell() ) {
-        throw NotApplyToSelfSpell();
-    }
+    try {
+        if ( (spellBook.at(spellName))->getIsCombatSpell() ) {
+            throw NotApplyToSelfSpell();
+        }
 
-    (spellBook.at(spellName))->castSpell(*this, *this);
+        (spellBook.at(spellName))->castSpell(*this, *this);
+    } catch ( std::out_of_range& e ) {
+        std::cout << this->getName() << " don't have spell \"" << spellName << "\" in SpellBook!" << std::endl;
+        showSpellBook();
+    }
 }
 
 void Spellcaster::addSpell(Spell* spell) {
@@ -52,7 +60,7 @@ void Spellcaster::showSpell(const std::string& value) const {
 }
 
 void Spellcaster::showSpellBook() {
-    std::cout << "Combat spells:";
+    std::cout << "Spellbook\nCombat spells:";
     for (std::map<std::string, Spell*>::iterator it=spellBook.begin(); it!=spellBook.end(); ++it) {
         if ( it->second->getIsCombatSpell() ) {
             std::cout << it->first << " ";

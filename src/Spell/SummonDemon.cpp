@@ -1,6 +1,6 @@
 #include "SummonDemon.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 SummonDemon::SummonDemon () {
     spellName = "SummonDemon";

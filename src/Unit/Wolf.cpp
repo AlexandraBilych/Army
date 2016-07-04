@@ -1,6 +1,6 @@
 #include "Wolf.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 Wolf::Wolf() {
     if ( DEBUG ) {

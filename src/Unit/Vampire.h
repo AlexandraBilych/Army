@@ -10,7 +10,7 @@ class Vampire : public AbstractVampire, public Wolf {
 
     public:
         Vampire(const std::string& name, float maxHp, float damage);
-        ~Vampire() {};
+        ~Vampire();
 
         void description();
 };

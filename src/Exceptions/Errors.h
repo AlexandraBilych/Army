@@ -11,4 +11,6 @@ class NotShareSpell{};
 
 class DemonSuperAttackIsUsed{};
 
+class InvalidParameters{};
+
 #endif

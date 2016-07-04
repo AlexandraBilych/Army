@@ -1,6 +1,6 @@
 #include "Spell.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 Spell::Spell() {
     if ( DEBUG ) {

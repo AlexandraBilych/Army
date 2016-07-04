@@ -1,7 +1,7 @@
 
 #include "Cruciatus.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 Cruciatus::Cruciatus () {
     spellName = "Cruciatus";
@@ -12,18 +12,22 @@ void Cruciatus::castSpell(Spellcaster& attacker, Unit& enemy) {
     if ( DEBUG ) {
         std::cout << "Cruciatus UNIT - UNIT" << std::endl;
     }
-    (attacker.getState()).checkMana(this->cost);
-    enemy.ensureIsAlive();
+    try {
+        (attacker.getState()).checkMana(this->cost);
+        enemy.ensureIsAlive();
 
-    float newMana = (attacker.getState()).getMana() - cost;
+        float newMana = (attacker.getState()).getMana() - cost;
 
-    if ( attacker.getIsCombatMage() ) {
-        (enemy.getState()).takeMagicDamage(magicDamage);
-    } else {
-        (enemy.getState()).takeMagicDamage(magicDamage/2);
+        if ( attacker.getIsCombatMage() ) {
+            (enemy.getState()).takeMagicDamage(magicDamage);
+        } else {
+            (enemy.getState()).takeMagicDamage(magicDamage/2);
+        }
+
+        (attacker.getState()).setMana(newMana);
+    } catch ( UnitIsDead& e ) {
+        std::cout << enemy.getName() << " is died!" << std::endl;
     }
-
-    (attacker.getState()).setMana(newMana);
 }
 
 void Cruciatus::description() const {

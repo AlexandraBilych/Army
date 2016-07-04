@@ -1,6 +1,6 @@
 #include "Soldier.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 Soldier::Soldier(const std::string& name, float maxHp, float damage) {
     if ( DEBUG ) {
@@ -8,8 +8,16 @@ Soldier::Soldier(const std::string& name, float maxHp, float damage) {
     }
     this->name = name;
     this->state = new SoldierState(maxHp, damage);
-    this->ability = new BaseAttack();
+    this->ability = BaseAttack::createInstance();
 
+}
+
+Soldier::~Soldier() {
+    if ( DEBUG ) {
+        std::cout << "DECONSTRUCTOR SOLDIER" << std::endl;
+    }
+
+    delete state;
 }
 
 void Soldier::description() {

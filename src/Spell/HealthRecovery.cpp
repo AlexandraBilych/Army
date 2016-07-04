@@ -1,6 +1,6 @@
 #include "HealthRecovery.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 HealthRecovery::HealthRecovery () {
     spellName = "HealthRecovery";
@@ -11,18 +11,22 @@ void HealthRecovery::castSpell(Spellcaster& self, Unit& lover) {
     if ( DEBUG ) {
         std::cout << "HealthRecovery Spellcaster" << std::endl;
     }
-    (self.getState()).checkMana(this->cost);
-    lover.ensureIsAlive();
+    try {
+        (self.getState()).checkMana(this->cost);
+        lover.ensureIsAlive();
 
-    float newMana = (self.getState()).getMana() - cost;
+        float newMana = (self.getState()).getMana() - cost;
 
-    if ( self.getIsCombatMage() ) {
-        (lover.getState()).recoveryHP(recoveredHP/2);
-    } else {
-        (lover.getState()).recoveryHP(recoveredHP);
+        if ( self.getIsCombatMage() ) {
+            (lover.getState()).recoveryHP(recoveredHP/2);
+        } else {
+            (lover.getState()).recoveryHP(recoveredHP);
+        }
+
+        (self.getState()).setMana(newMana);
+    } catch ( UnitIsDead& e ) {
+        std::cout << lover.getName() << " is died!" << std::endl;
     }
-
-    (self.getState()).setMana(newMana);
 }
 
 void HealthRecovery::description() const {

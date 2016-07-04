@@ -1,6 +1,6 @@
 #include "Berserker.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 Berserker::Berserker(const std::string& name, float maxHp, float damage) {
     if ( DEBUG ) {
@@ -8,7 +8,15 @@ Berserker::Berserker(const std::string& name, float maxHp, float damage) {
     }
     this->name = name;
     this->state = new BerserkerState(maxHp, damage);
-    this->ability = new BaseAttack();
+    this->ability = BaseAttack::createInstance();
+}
+
+Berserker::~Berserker() {
+    if ( DEBUG ) {
+        std::cout << "DECONSTRUCTOR BERSERKER" << std::endl;
+    }
+
+    delete state;
 }
 
 void Berserker::description() {

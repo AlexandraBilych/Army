@@ -1,6 +1,6 @@
 #include "RogueState.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 RogueState::RogueState(float maxHp, float damage) {
     if ( DEBUG ) {

@@ -1,6 +1,6 @@
 #include "VampireState.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 VampireState::VampireState(float hp, float maxHp, float damage) {
     if ( DEBUG ) {

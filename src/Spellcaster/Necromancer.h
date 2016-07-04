@@ -2,7 +2,7 @@
 #define NECROMANCER_H
 
 #include "Spellcaster.h"
-#include "../State/NecromancerState.h"
+#include "../State/SpellcasterState.h"
 #include "../Ability/BaseAttack.h"
 #include "../Spell/Cruciatus.h"
 #include <set>

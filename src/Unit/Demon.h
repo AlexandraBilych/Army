@@ -11,6 +11,7 @@ class Demon : public Soldier {
 
     public:
         Demon(const std::string& name, float maxHp = 100, float damage = 10);
+        ~Demon();
 
         void superAttack(Unit& enemy);
         void description();

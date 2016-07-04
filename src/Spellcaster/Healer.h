@@ -2,7 +2,7 @@
 #define HEALER_H
 
 #include "Spellcaster.h"
-#include "../State/HealerState.h"
+#include "../State/SpellcasterState.h"
 #include "../Ability/BaseAttack.h"
 #include "../Spell/HealthRecovery.h"
 

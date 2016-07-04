@@ -1,6 +1,6 @@
 #include "BaseAttack.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 void BaseAttack::attack(Unit& attacker, Unit& enemy) {
     if ( DEBUG ) {
@@ -16,16 +16,27 @@ void BaseAttack::attack(Unit& attacker, Unit& enemy) {
         enemy.ensureIsAlive();
         enemy.counterAttack(attacker);
 
-    } catch ( UnitIsDead e ) {
+    } catch ( UnitIsDead& e ) {
         std::cout << enemy.getName() << " is died!" << std::endl;
     }
 
 }
 
 void BaseAttack::counterAttack(Unit& counterAttacker, Unit& enemy) {
-    std::cout << "BASEATTACK COUNTER_ATTACK" << std::endl;
     float newHitPoints = (enemy.getState()).getHitPoints() - (counterAttacker.getState()).getDamage()/2;
 
     (enemy.getState()).takeDamage(newHitPoints);
 }
 
+BaseAttack* BaseAttack::instance = NULL;
+
+BaseAttack* BaseAttack::createInstance() {
+    if (!instance)
+        instance = new BaseAttack();
+
+    if ( DEBUG ) {
+        std::cout << "Metod BaseAttack::createInstance(): adress" << instance << std::endl;
+    }
+
+    return instance;
+}

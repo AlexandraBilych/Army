@@ -1,6 +1,6 @@
 #include "Rogue.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 Rogue::Rogue(const std::string& name, float maxHp, float damage) {
     if ( DEBUG ) {
@@ -8,7 +8,15 @@ Rogue::Rogue(const std::string& name, float maxHp, float damage) {
     }
     this->name = name;
     this->state = new RogueState(maxHp, damage);
-    this->ability = new RogueAbility();
+    this->ability = RogueAbility::createInstance();
+}
+
+Rogue::~Rogue() {
+    if ( DEBUG ) {
+        std::cout << "DECONSTRUCTOR ROGUE" << std::endl;
+    }
+
+    delete state;
 }
 
 void Rogue::description() {

@@ -8,11 +8,20 @@ Werewolf::Werewolf(const std::string& name, float maxHp, float damage) {
     }
     this->name = name;
     this->altState = new WolfState(maxHp*2, damage*2);
-    this->altAbility = new WolfAbility();
+    this->altAbility = WolfAbility::createInstance();
     this->state = new SoldierState(maxHp, damage);
-    this->ability = new BaseAttack();
+    this->ability = BaseAttack::createInstance();
     isWerewolf = true;
 
+}
+
+Werewolf::~Werewolf() {
+    if ( DEBUG ) {
+        std::cout << "DECONSTRUCTOR WEREWOLF" << std::endl;
+    }
+
+    delete state;
+    delete altState;
 }
 
 void Werewolf::description() {

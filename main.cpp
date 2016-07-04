@@ -2,442 +2,408 @@
 #include <iostream>
 
 int main() {
-    Soldier* s = new Soldier("Rick", 30, 30);
-    s->description();
-
-
-//SOLDIER TEST
-
-    // Soldier* a = new Soldier("Bran", 100, 20);
-
-    // a->description();
-
-    // // std::cout << "\n-----------Attack(Soldier-Soldier)------------\n" << std::endl;
-    // s->attack(a);
-    // s->description();
-    // a->description();
-
-    // // std::cout << "\n-----------Attack(Soldier-Soldier)------------\n" << std::endl;
-    // a->attack(s);
-    // s->description();
-    // a->description();
-
-
-// VAMPIRE TEST
-
-    // Vampire* v = new Vampire("Dragun", 100, 30);
-    // v->description();
-
-    // std::cout << "\n-----------Attack(Wolf-Vampire)------------\n" << std::endl;
-    // s->transform();
-    // v->attack(s);
-    // s->attack(v);
-    // v->description();
-    // s->description();
-
-    // std::cout << "\n-----------Attack(Soldier-Vampire)------------\n" << std::endl;
-    // s->attack(v);
-    // v->description();
-    // s->description();
-
-    // std::cout << "\n-----------Attack(Vampire-Soldier(Vampire))------------\n" << std::endl;
-    // v->attack(s);
-    // v->description();
-    // s->description();
-
-    // std::cout << "\n-----------Attack(Soldier-Vampire)------------\n" << std::endl;
-    // s->attack(v);
-    // v->description();
-    // s->description();
-
-
-
-// ROGUE TEST
-
-    // Rogue* r = new Rogue("Briena", 150, 30);
-    // r->description();
-    // // std::cout << "\n-----------Attack(w-r)------------\n" << std::endl;
-    // // w->attack(r);
-    // // r->description();
-    // // r->transform();
-    // // r->description();
-    // // r->transform();
-
-    // std::cout << "\n-----------Attack(r-s)------------\n" << std::endl;
-    // r->attack(s);
-    // r->description();
-    // s->description();
-
-    // std::cout << "\n-----------Attack(s-r)------------\n" << std::endl;
-    // s->attack(r);
-    // r->description();
-    // s->description();
-
-// WERWOLF TEST
-
-    // Werewolf* w = new Werewolf("Gara", 150, 20);
-    // w->description();
-    // w->transform();
-    // std::cout << "\n-----------Werewolf transform------------\n" << std::endl;
-    // w->description();
-
-    // std::cout << "\n-----------Attack(s-w)------------\n" << std::endl;
-    // s->attack(w);
-    // w->description();
-    // s->description();
-    // s->transform();
-    // s->description();
-
-    // std::cout << "\n-----------Attack(w-s)------------\n" << std::endl;
-    // w->attack(s);
-    // w->description();
-    // w->transform();
-    // w->description();
-
-    // s->description();
-    // s->transform();
-    // s->description();
-
-    // Soldier* news = new Soldier("Bran", 100, 10);
-    // news->description();
-
-    // std::cout << "\n-----------Attack(s(w)-s)------------\n" << std::endl;
-    // s->attack(news);
-
-    // s->description();
-    // news->description();
-    // news->transform();
-    // news->description();
-
-    // delete w;
-
-//WEREWOLF - ROGUE -- VAMPIRE
-
-    // Werewolf* w = new Werewolf("Gara", 150, 20);
-    // w->description();
-    // w->transform();
-    // std::cout << "\n-----------Werewolf transform------------\n" << std::endl;
-    // w->description();
-
-    // Rogue* r = new Rogue("Briena", 150, 30);
-    // r->description();
-
-    // Vampire* v = new Vampire("Dragun", 100, 30);
-    // v->description();
-
-    // std::cout << "\n-----------Attack(ROGUE-WEREWOLF)------------\n" << std::endl;
-    // r->attack(w);
-    // w->description();
-    // r->description();
-
-    // std::cout << "\n-----------Attack(ROGUE-VAMPIRE)------------\n" << std::endl;
-    // r->attack(v);
-    // v->description();
-    // r->description();
-
-    // std::cout << "\n-----------Attack(WEREWOLF - ROGUE)------------\n" << std::endl;
-    // w->attack(r);
-    // w->description();
-    // r->description();
-    // r->transform();
-    // r->description();
-
-    // std::cout << "\n-----------Attack(ROGUE-VAMPIRE)------------\n" << std::endl;
-    // r->attack(v);
-    // v->description();
-    // r->description();
-
-    // std::cout << "\n-----------Attack(VAMPIRE - ROGUE)------------\n" << std::endl;
-    // v->attack(r);
-    // r->description();
-    // v->description();
-
-    // std::cout << "\n-----------Attack(ROGUE-WEREWOLF)------------\n" << std::endl;
-    // r->attack(w);
-    // w->description();
-    // r->description();
-
-    // delete w;
-    // delete r;
-    // delete v;
-
-//WIZARD TEST
-
-    // Wizard* wiz = new Wizard("Gendelf", 100, 5, 70);
-
-    // wiz->addSpell(AvadaKedavra::createSpell());
-
-    // wiz->description();
-    // // wiz->showSpellBook();
-
-
-    // std::cout << "\n-----------Attack(Wizard-Wizard)------------\n" << std::endl;
-    // Wizard* wiz2 = new Wizard("Demon", 100, 8, 30);
-
-
-    // // wiz2->description();
-    // // wiz2->melleAttack(wiz);
-    // // wiz2->description();
-    // // wiz->description();
-
-    // // std::cout << "\n-----------Attack(Wizard-Wizard)------------\n" << std::endl;
-    // // wiz->attack(wiz2);
-    // // wiz2->description();
-    // // wiz->description();
-
-
-    // // std::cout << "\n-----------Attack(Soldier-Wizard)------------\n" << std::endl;
-    // // s->attack(wiz);
-    // // s->description();
-    // // wiz->description();
-
-    // //     // std::cout << "\n-----------Attack(Wizard-Soldier)------------\n" << std::endl;
-    // // wiz->melleAttack(s);
-    // // s->description();
-    // // wiz->description();
-
-    // std::cout << "\n-----------Magic Attack------------\n" << std::endl;
-
-    // Wizard* wiz2 = new Wizard("Demon", 100, 8, 50);
-    // wiz2->addSpell("Cruciatus",new Cruciatus());
-    // wiz->addSpell("HealthRecovery",new HealthRecovery());
-    // wiz->showSpellBook();
-
-    // wiz2->description();
-    // std::cout << "\n-----------Attack(Wizard-Wizard) - spell Cruciatus------------\n" << std::endl;
-    // wiz2->spell("Cruciatus", wiz);
-    // wiz2->description();
-    // wiz->description();
-
-    // std::cout << "\n-----------Spell(Wizard) - HealthRecovery------------\n" << std::endl;
-    // wiz->spell("HealthRecovery");
-    // wiz->description();
-
-    // std::cout << "\n-----------Attack(Wizard-Wizard) - AvadaKedavra------------\n" << std::endl;
-    // wiz->spell("AvadaKedavra", wiz2);
-    // wiz2->description();
-    // wiz->description();
-
-    // std::cout << "\n-----------Attack(Wizard-Soldier) - spell AvadaKedavra------------\n" << std::endl;
-    // wiz->spell("AvadaKedavra", s);
-    // s->description();
-    // wiz->description();
-
-    // delete wiz2;
-
-
-
-    // delete wiz;
-
-//WARLOCK TEST
-
-    // Warlock* war = new Warlock("Master", 150, 10, 60);
-    // war->addSpell(Cruciatus::createSpell());
-    // war->addSpell(HealthRecovery::createSpell());
-    // war->addSpell(HealthRecovery::createSpell());
-
-    // war->description();
-    // war->showSpellBook();
-
-    // std::cout << "\n-----------melleAttack(HEALER-Wizard)------------\n" << std::endl;
-    // war->melleAttack(wiz);
-    // wiz->description();
-    // war->description();
-
-    // std::cout << "\n-----------HealthRecovery(HEALER)------------\n" << std::endl;
-    // war->spell("HealthRecovery");
-    // war->description();
-
-    // std::cout << "\n-----------spell(Wizard-HEALER)------------\n" << std::endl;
-    // wiz->spell("AvadaKedavra", war);
-    // wiz->description();
-    // war->description();
-
-    // std::cout << "\n-----------Attack(Soldier-HEALER)------------\n" << std::endl;
-    // s->attack(war);
-    // s->description();
-    // war->description();
-
-    // std::cout << "\n-----------Spell(Werewolf-Demon)------------\n" << std::endl;
-
-    // Demon* d = war->spell("SummonDemon", "Neyton");
-    // d->description();
-    // w->attack(d);
-    // d->description();
-    // w->description();
-    // war->description();
-
-    // std::cout << "\n-----------Spell(HEALER-Soldier)------------\n" << std::endl;
-
-    // Demon* d = war->spell("SummonDemon", "Neyton");
-    // d->description();
-    // d->superAttack(s);
-    // d->description();
-    // s->description();
-    // war->description();
-
-//HEALER TEST
-
-    // Healer* h = new Healer("Doctor", 150, 5, 100);
-    // h->addSpell("Cruciatus", new Cruciatus());
-    // h->addSpell("HealthRecovery", new HealthRecovery);
-
-    // h->description();
-    // h->showSpellBook();
-
-    // std::cout << "\n-----------melleAttack(HEALER-Wizard)------------\n" << std::endl;
-    // h->melleAttack(wiz);
-    // wiz->description();
-    // h->description();
-
-    // std::cout << "\n-----------HealthRecovery(HEALER)------------\n" << std::endl;
-    // h->spell("HealthRecovery");
-    // h->description();
-
-    // std::cout << "\n-----------spell(Wizard-HEALER)------------\n" << std::endl;
-    // wiz->spell("AvadaKedavra", h);
-    // wiz->description();
-    // h->description();
-
-    // std::cout << "\n-----------Attack(Soldier-HEALER)------------\n" << std::endl;
-    // s->attack(h);
-    // s->description();
-    // h->description();
-
-    // std::cout << "\n-----------Spell(HEALER-Soldier)------------\n" << std::endl;
-    // h->spell("Cruciatus", s);
-    // s->description();
-    // h->description();
-
-
-//PRIEST TEST
-
-    // Priest* pr = new Priest("Papa", 100, 10, 70);
-
-    // pr->addSpell(AvadaKedavra::createSpell());
-    // pr->addSpell(HealthRecovery::createSpell());
-
-    // pr->description();
-    // pr->showSpellBook();
-
-    // std::cout << "\n-----------Attack(Soldier-Priest)------------\n" << std::endl;
-    // s->attack(pr);
-    // s->description();
-    // pr->description();
-
-    // std::cout << "\n-----------Attack(Priest-Soldier)------------\n" << std::endl;
-    // pr->melleAttack(s);
-    // s->description();
-    // pr->description();
-
-    // std::cout << "\n-----------Magic Attack------------\n" << std::endl;
-
-    // Wizard* wiz = new Wizard("Demon", 100, 8, 50);
-
-    // wiz->description();
-    // std::cout << "\n-----------Attack(Priest-Wizard) - spell Cruciatus------------\n" << std::endl;
-    // pr->spell("Cruciatus", wiz);
-    // wiz->description();
-    // pr->description();
-
-    // std::cout << "\n-----------Spell(Priest) - HealthRecovery------------\n" << std::endl;
-    // pr->spell("HealthRecovery");
-    // pr->description();
-
-    // Vampire* vam = new Vampire("Dragula", 130, 30);
-    // vam->description();
-
-    // std::cout << "\n-----------Attack(Wizard-Vampire) - AvadaKedavra------------\n" << std::endl;
-    // pr->spell("AvadaKedavra", vam);
-    // pr->description();
-    // vam->description();
-
-    // std::cout << "\n-----------Attack(Priest-Soldier)------------\n" << std::endl;
-    // pr->spell("AvadaKedavra", s);
-    // s->description();
-    // pr->description();
-
-    // std::cout << "\n-----------Attack(Wizard-Soldier) - spell AvadaKedavra------------\n" << std::endl;
-    // wiz->spell("AvadaKedavra", s);
-    // s->description();
-    // wiz->description();
-
-    // delete pr;
-    // delete wiz;
-
+    Soldier* soldierFirst = new Soldier("soldierFirst", 300, 30);
+    soldierFirst->description();
+    Soldier* soldierSecond = new Soldier("soldierSecond", 1000, 20);
+    soldierSecond->description();
+
+    Vampire* vampireFirst = new Vampire("vampireFirst", 100, 30);
+    vampireFirst->description();
+    Vampire* vampireSecond = new Vampire("vampireSecond", 100, 30);
+    vampireSecond->description();
+
+    Rogue* rogueFirst = new Rogue("rogueFirst", 150, 30);
+    rogueFirst->description();
+    Rogue* rogueSecond = new Rogue("rogueSecond", 150, 30);
+    rogueSecond->description();
+
+    Werewolf* werewolfFirst = new Werewolf("werewolfFirst", 150, 20);
+    werewolfFirst->description();
+    Werewolf* werewolfSecond = new Werewolf("werewolfSecond", 150, 20);
+    werewolfSecond->description();
+
+    Berserker* berserkerFirst = new Berserker("berserkerFirst", 120, 20);
+    berserkerFirst->description();
+    Berserker* berserkerSecond = new Berserker("berserkerSecond", 200, 20);
+    berserkerSecond->description();
+
+    Wizard* wizardFirst = new Wizard("wizardFirst", 200, 5, 70);
+    wizardFirst->addSpell(AvadaKedavra::createSpell());
+    wizardFirst->description();
+    wizardFirst->showSpellBook();
+
+    Wizard* wizardSecond = new Wizard("wizardSecond", 150, 5, 70);
+    wizardSecond->addSpell(HealthRecovery::createSpell());
+    // wizardSecond->addSpell(SummonDemon::createSpell());
+    wizardSecond->description();
+    wizardSecond->showSpellBook();
+
+    Warlock* warlockFirst = new Warlock("warlockFirst", 150, 10, 60);
+    warlockFirst->addSpell(Cruciatus::createSpell());
+    warlockFirst->addSpell(HealthRecovery::createSpell());
+    warlockFirst->description();
+    warlockFirst->showSpellBook();
+
+    Warlock* warlockSecond = new Warlock("warlockSecond", 150, 10, 60);
+    warlockSecond->addSpell(AvadaKedavra::createSpell());
+    warlockSecond->addSpell(HealthRecovery::createSpell());
+    warlockSecond->addSpell(HealthRecovery::createSpell());
+    warlockSecond->description();
+    warlockSecond->showSpellBook();
+
+    Healer* healerFirst = new Healer("healerFirst", 150, 5, 100);
+    healerFirst->addSpell(Cruciatus::createSpell());
+    healerFirst->description();
+    healerFirst->showSpellBook();
+
+    Healer* healerSecond = new Healer("healerSecond", 150, 5, 100);
+    healerSecond->addSpell(AvadaKedavra::createSpell());
+    healerSecond->description();
+    healerSecond->showSpellBook();
+
+    Priest* priestFirst = new Priest("priestFirst", 100, 10, 70);
+    priestFirst->addSpell(AvadaKedavra::createSpell());
+    priestFirst->addSpell(HealthRecovery::createSpell());
+    priestFirst->description();
+    priestFirst->showSpellBook();
+
+    Priest* priestSecond = new Priest("priestSecond", 100, 10, 70);
+    priestSecond->addSpell(AvadaKedavra::createSpell());
+    priestSecond->description();
+    priestSecond->showSpellBook();
+
+    Necromancer* necromancerFirst = new Necromancer("necromancerFirst", 150, 5, 100);
+    necromancerFirst->addSpell(HealthRecovery::createSpell());
+    necromancerFirst->description();
+    necromancerFirst->showSpellBook();
+
+    Necromancer* necromancerSecond = new Necromancer("necromancerSecond", 150, 5, 100);
+    necromancerSecond->addSpell(HealthRecovery::createSpell());
+    necromancerSecond->description();
+    necromancerSecond->showSpellBook();
 
 
 //NECROMANCER TEST
 
-    Necromancer* h = new Necromancer("Dead", 150, 5, 100);
-    h->addSpell(HealthRecovery::createSpell());
-
-    h->description();
-    h->showSpellBook();
-
     std::cout << "\n-----------Attack(Soldier-Necromancer)------------\n" << std::endl;
-    s->attack(*h);
-    s->description();
-    h->description();
+    soldierFirst->attack(*necromancerFirst);
+    soldierFirst->description();
+    necromancerFirst->description();
 
     std::cout << "\n-----------MagicAttack(Necromancer-Soldier)------------\n" << std::endl;
-    h->castSpell("Cruciatus", *s);
-    s->description();
-    h->description();
+    necromancerFirst->castSpell("Cruciatus", *berserkerFirst);
+    necromancerFirst->description();
+    berserkerFirst->description();
+
+    std::cout << "\n-----------Attack(Necromancer-Wizard)------------\n" << std::endl;
+    necromancerSecond->castSpell("Cruciatus", *wizardSecond);
+    necromancerSecond->description();
+    wizardSecond->description();
+
+
+// SOLDIER TEST
 
     std::cout << "\n-----------Attack(Soldier-Soldier)------------\n" << std::endl;
-    Soldier* assassin = new Soldier("Assassin", 15, 100);
-    assassin->description();
-    assassin->attack(*s);
-    s->description();
-    assassin->description();
-    h->description();
+    soldierFirst->attack(*soldierSecond);
+    soldierFirst->description();
+    soldierSecond->description();
 
+    std::cout << "\n-----------Attack(Soldier-Soldier)------------\n" << std::endl;
+    soldierSecond->attack(*soldierFirst);
+    soldierFirst->description();
+    soldierSecond->description();
+
+    std::cout << "\n-----------Attack(Soldier-Rogue)------------\n" << std::endl;
+    soldierFirst->attack(*rogueFirst);
+    soldierFirst->description();
+    rogueFirst->description();
+
+    std::cout << "\n-----------Attack(Soldier-Wizard)------------\n" << std::endl;
+    soldierFirst->attack(*wizardSecond);
+    soldierFirst->description();
+    wizardSecond->description();
+
+    std::cout << "\n-----------Attack(Soldier-Priest)------------\n" << std::endl;
+    soldierSecond->attack(*priestSecond);
+    soldierSecond->description();
+    priestSecond->description();
+
+    std::cout << "\n-----------Attack(Soldier-Berserker)------------\n" << std::endl;
+    soldierSecond->attack(*berserkerFirst);
+    berserkerFirst->description();
+    soldierSecond->description();
+
+    std::cout << "\n-----------Attack(Soldier-Vampire)------------\n" << std::endl;
+    soldierFirst->attack(*vampireFirst);
+    soldierFirst->description();
+    vampireFirst->description();
+
+    std::cout << "\n-----------Attack(Wolf-Soldier)------------\n" << std::endl;
+    werewolfFirst->transform();
+    soldierSecond->attack(*werewolfFirst);
+    werewolfFirst->description();
+    soldierSecond->description();
+
+    std::cout << "\n-----------Werewolf transform------------\n" << std::endl;
+    soldierSecond->transform();
+    soldierSecond->description();
+
+
+// ROGUE TEST
+
+    std::cout << "\n-----------Attack(Rogue-Rogue)------------\n" << std::endl;
+    rogueSecond->attack(*rogueFirst);
+    rogueSecond->description();
+    rogueFirst->description();
+
+    std::cout << "\n-----------Attack(Wolf-Rogue)------------\n" << std::endl;
+    werewolfSecond->attack(*rogueFirst);
+    rogueFirst->description();
+    werewolfSecond->description();
+
+    std::cout << "\n-----------Rouge transform------------\n" << std::endl;
+    rogueFirst->transform();
+    rogueFirst->description();
+
+    std::cout << "\n-----------Attack(Rogue-Soldier(Wolf))------------\n" << std::endl;
+    rogueFirst->attack(*soldierFirst);
+    rogueFirst->description();
+    soldierFirst->description();
+
+    std::cout << "\n-----------Attack(Rogue-Soldier(Vampire))------------\n" << std::endl;
+    rogueSecond->attack(*soldierFirst);
+    rogueSecond->description();
+    soldierFirst->description();
+
+    std::cout << "\n-----------Attack(Vampire-Rogue)------------\n" << std::endl;
+    vampireFirst->attack(*rogueSecond);
+    vampireFirst->description();
+    rogueSecond->description();
 
 
 //BERSERKER TEST
 
-    // Berserker* b = new Berserker("Crazy", 200, 20);
-    // Wizard* wiz = new Wizard("Gendelf", 100, 5, 30);
-    // wiz->addSpell("Cruciatus",new Cruciatus());
+    std::cout << "\n-----------Attack(Berserker-Berserker)------------\n" << std::endl;
+    berserkerFirst->attack(*berserkerSecond);
+    berserkerFirst->description();
+    berserkerSecond->description();
 
-    // b->description();
+    std::cout << "\n-----------Attack(Berserker-Soldier)------------\n" << std::endl;
+    berserkerSecond->attack(*soldierFirst);
+    berserkerSecond->description();
+    soldierFirst->description();
 
-    // std::cout << "\n-----------Attack(Soldier-Berserker)------------\n" << std::endl;
-    // s->attack(b);
-    // s->description();
-    // b->description();
+    std::cout << "\n-----------Attack(Wizard-Berserker)------------\n" << std::endl;
+    wizardFirst->castSpell("AvadaKedavra", *berserkerFirst);
+    wizardFirst->description();
+    berserkerFirst->description();
 
-    // std::cout << "\n-----------Attack(Berserker-Soldier)------------\n" << std::endl;
-    // b->attack(s);
-    // s->description();
-    // b->description();
+    std::cout << "\n-----------Attack(Healer-Berserker) -- Spell Cruciatus------------\n" << std::endl;
+    healerFirst->castSpell("Cruciatus", *berserkerFirst);
+    healerFirst->description();
+    berserkerFirst->description();
 
-    // wiz->description();
+    std::cout << "\n-----------Attack(Necromancer-Berserker)------------\n" << std::endl;
+    necromancerFirst->castSpell("Cruciatus", *berserkerFirst);
+    necromancerFirst->description();
+    berserkerFirst->description();
 
-    // std::cout << "\n-----------Attack(Wizard-Berserker)------------\n" << std::endl;
-    // wiz->attack(b);
-    // wiz->description();
-    // b->description();
-
-    // std::cout << "\n-----------Attack(Wizard-Berserker) -- Spell Cruciatus------------\n" << std::endl;
-    // wiz->spell("Cruciatus", b);
-    // wiz->description();
-    // b->description();
-
-    // std::cout << "\n-----------Attack(Berserker-Wizard)------------\n" << std::endl;
-    // b->attack(wiz);
-    // wiz->description();
-    // b->description();
-
-    // delete b;
-    // delete wiz;
+    std::cout << "\n-----------Attack(Vampire-Berserker)------------\n" << std::endl;
+    vampireFirst->attack(*berserkerSecond);
+    vampireFirst->description();
+    berserkerSecond->description();
 
 
 
+// VAMPIRE TEST
 
-    delete s;
+    std::cout << "\n-----------Attack(Vampire(Rogue)-Vampire)------------\n" << std::endl;
+    rogueSecond->attack(*vampireSecond);
+    rogueSecond->description();
+    vampireSecond->description();
 
+    std::cout << "\n-----------Attack(Wolf-Vampire)------------\n" << std::endl;
+    werewolfSecond->attack(*vampireSecond);
+    werewolfSecond->description();
+    vampireSecond->description();
+
+    std::cout << "\n-----------Attack(Vampire - Vampire(Berserker))------------\n" << std::endl;
+    werewolfFirst->attack(*berserkerSecond);
+    werewolfFirst->description();
+    berserkerSecond->description();
+
+
+// WERWOLF TEST
+
+    werewolfSecond->transform();
+    std::cout << "\n-----------Werewolf transform------------\n" << std::endl;
+    werewolfSecond->description();
+
+    std::cout << "\n-----------Attack(s-w)------------\n" << std::endl;
+    werewolfFirst->attack(*werewolfSecond);
+    werewolfFirst->description();
+    werewolfSecond->description();
+
+    std::cout << "\n-----------Werewolf transform------------\n" << std::endl;
+    werewolfFirst->transform();
+    werewolfFirst->description();
+
+    std::cout << "\n-----------Attack(w-s)------------\n" << std::endl;
+    werewolfFirst->attack(*werewolfSecond);
+    werewolfFirst->description();
+    werewolfSecond->description();
+
+    std::cout << "\n-----------Werewolf transform------------\n" << std::endl;
+    werewolfFirst->transform();
+    werewolfFirst->description();
+
+
+//WIZARD TEST
+
+    std::cout << "\n-----------Attack(Wizard-Wizard)------------\n" << std::endl;
+    wizardSecond->attack(*wizardFirst);
+    wizardSecond->description();
+    wizardFirst->description();
+
+    std::cout << "\n-----------Attack(Berserker-Wizard)------------\n" << std::endl;
+    berserkerSecond->attack(*wizardSecond);
+    berserkerSecond->description();
+    wizardSecond->description();
+
+    std::cout << "\n-----------Attack(Wizard-Rouge)------------\n" << std::endl;
+    wizardFirst->attack(*rogueFirst);
+    rogueSecond->description();
+    wizardFirst->description();
+
+    std::cout << "\n-----------Magic Attack------------\n" << std::endl;
+    std::cout << "\n-----------Attack(Wizard-Wizard) - spell Cruciatus------------\n" << std::endl;
+    wizardSecond->castSpell("Cruciatus", *wizardFirst);
+    wizardSecond->description();
+    wizardFirst->description();
+
+    std::cout << "\n-----------Spell(Wizard) - HealthRecovery------------\n" << std::endl;
+    wizardFirst->castSpell("HealthRecovery");
+    wizardFirst->description();
+
+    std::cout << "\n-----------Attack(Wizard-Wizard) - AvadaKedavra------------\n" << std::endl;
+    wizardFirst->castSpell("AvadaKedavra", *healerFirst);
+    wizardFirst->description();
+    healerFirst->description();
+
+
+//WARLOCK TEST
+
+    std::cout << "\n-----------attack(Warlock-Berseker)------------\n" << std::endl;
+    warlockSecond->attack(*berserkerSecond);
+    warlockSecond->description();
+    berserkerSecond->description();
+
+    std::cout << "\n-----------HealthRecovery(HEALER)------------\n" << std::endl;
+    warlockSecond->castSpell("HealthRecovery");
+    warlockSecond->description();
+
+    std::cout << "\n-----------Spell(Werewolf-Demon)------------\n" << std::endl;
+
+    Demon* demonFirst = warlockFirst->castSpell("SummonDemon", "DemonFirst");
+    demonFirst->description();
+    werewolfFirst->attack(*demonFirst);
+    werewolfFirst->description();
+    demonFirst->description();
+    warlockFirst->description();
+
+    std::cout << "\n-----------Demon Transform------------\n" << std::endl;
+    demonFirst->transform();
+    demonFirst->description();
+
+    std::cout << "\n-----------Spell(Demon-Soldier)------------\n" << std::endl;
+
+    Demon* demonSecond = warlockFirst->castSpell("SummonDemon", "DemonSecond");
+    demonSecond->description();
+    demonSecond->superAttack(*priestFirst);
+    demonSecond->description();
+    priestFirst->description();
+    warlockFirst->description();
+
+
+//HEALER TEST
+
+    std::cout << "\n-----------melleAttack(HEALER-Wizard)------------\n" << std::endl;
+    healerSecond->attack(*wizardFirst);
+    wizardFirst->description();
+    healerSecond->description();
+
+    std::cout << "\n-----------HealthRecovery(HEALER)------------\n" << std::endl;
+    healerSecond->castSpell("HealthRecovery");
+    healerSecond->description();
+
+    std::cout << "\n-----------Spell(HEALER-Vampire)------------\n" << std::endl;
+    healerSecond->castSpell("Cruciatus", *vampireSecond);
+    healerSecond->description();
+    vampireSecond->description();
+
+
+//PRIEST TEST
+
+    std::cout << "\n-----------Attack(Rogue-Priest)------------\n" << std::endl;
+    rogueSecond->attack(*priestFirst);
+    priestFirst->description();
+    rogueSecond->description();
+
+    std::cout << "\n-----------Attack(Priest-Bercerker)------------\n" << std::endl;
+    priestFirst->attack(*berserkerSecond);
+    berserkerSecond->description();
+    priestFirst->description();
+
+    std::cout << "\n-----------Magic Attack------------\n" << std::endl;
+    std::cout << "\n-----------Spell(Priest) - HealthRecovery------------\n" << std::endl;
+    priestFirst->castSpell("HealthRecovery");
+    priestFirst->description();
+
+
+    std::cout << "\n-----------Attack(Priest-Vampipe) - spell Cruciatus------------\n" << std::endl;
+    priestSecond->castSpell("Cruciatus", *vampireSecond);
+    priestSecond->description();
+    vampireSecond->description();
+
+    std::cout << "\n-----------Spell(Priest) - HealthRecovery------------\n" << std::endl;
+    priestFirst->castSpell("HealthRecovery");
+    priestFirst->description();
+
+    std::cout << "\n-----------Attack(Wizard-Soldier(Wolf)) - Cruciatus------------\n" << std::endl;
+    priestSecond->castSpell("Cruciatus", *soldierFirst);
+    priestSecond->description();
+    soldierFirst->description();
+
+
+    delete soldierFirst;
+    delete soldierSecond;
+
+    delete vampireFirst;
+    delete vampireSecond;
+
+    delete rogueFirst;
+    delete rogueSecond;
+
+    delete werewolfFirst;
+    delete werewolfSecond;
+
+    delete berserkerFirst;
+    delete berserkerSecond;
+
+    delete wizardFirst;
+    delete wizardSecond;
+
+    delete warlockFirst;
+    delete warlockSecond;
+
+    delete healerFirst;
+    delete healerSecond;
+
+    delete priestFirst;
+    delete priestSecond;
+
+    delete necromancerFirst;
+    delete necromancerSecond;
 
     return 0;
 }

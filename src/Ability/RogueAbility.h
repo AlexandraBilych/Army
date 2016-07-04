@@ -4,12 +4,15 @@
 #include "Ability.h"
 
 class RogueAbility : public Ability {
+    private:
+        static RogueAbility* instance;
+        RogueAbility() {};
 
     public:
-        RogueAbility() {};
         void attack(Unit& attacker, Unit& enemy);
         void counterAttack(Unit& counterAttacker, Unit& enemy);
 
+        static RogueAbility* createInstance();
 };
 
 #endif

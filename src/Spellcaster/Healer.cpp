@@ -1,6 +1,6 @@
 #include "Healer.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 Healer::Healer(const std::string& name, float maxHp, float damage, float mana) {
     if ( DEBUG ) {
@@ -8,8 +8,8 @@ Healer::Healer(const std::string& name, float maxHp, float damage, float mana) {
     }
 
     this->name = name;
-    this->state = new HealerState(maxHp, damage, mana);
-    this->ability = new BaseAttack();
+    this->state = new SpellcasterState(maxHp, damage, mana);
+    this->ability = BaseAttack::createInstance();
 
     spellBook.insert ( std::pair<std::string, Spell*>("HealthRecovery", HealthRecovery::createSpell()) );
 }
@@ -19,7 +19,7 @@ void Healer::description() {
         std::cout << "HEALER::description" << std::endl;
     }
 
-    std::cout << "\nHealing mage - " << name << std::endl;
+    std::cout << "\nHealing mage - " << name << ". I'm healer."<< std::endl;
     state->showState();
 
 }

@@ -10,7 +10,7 @@
 class Werewolf : public Wolf {
     public:
         Werewolf(const std::string& name, float maxHp, float damage);
-        ~Werewolf() {};
+        ~Werewolf();
 
         void description();
 };

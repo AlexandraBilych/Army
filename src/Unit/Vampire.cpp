@@ -1,6 +1,6 @@
 #include "Vampire.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 Vampire::Vampire(const std::string& name, float maxHp, float damage) {
     if ( DEBUG ) {
@@ -8,10 +8,18 @@ Vampire::Vampire(const std::string& name, float maxHp, float damage) {
     }
     this->name = name;
     this->state = new VampireState(maxHp, damage);
-    this->ability = new VampireAbility();
+    this->ability = VampireAbility::createInstance();
 
     isVampire = true;
     isUndead = true;
+}
+
+Vampire::~Vampire() {
+    if ( DEBUG ) {
+        std::cout << "DECONSTRUCTOR VAMPIRE" << std::endl;
+    }
+
+    delete state;
 }
 
 void Vampire::description() {

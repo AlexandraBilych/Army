@@ -1,10 +1,10 @@
-#include "NecromancerState.h"
+#include "SpellcasterState.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
-NecromancerState::NecromancerState(float maxHp, float damage, float mana) {
+SpellcasterState::SpellcasterState(float maxHp, float damage, float mana) {
     if ( DEBUG ) {
-        std::cout << "NecromancerState ::CONSTRUCTOR" << std::endl;
+        std::cout << "SpellcasterState ::CONSTRUCTOR" << std::endl;
     }
 
     hitPoints = maxHp;
@@ -13,12 +13,11 @@ NecromancerState::NecromancerState(float maxHp, float damage, float mana) {
     this->mana = mana;
 }
 
-void NecromancerState::showState() {
+void SpellcasterState::showState() {
     if ( DEBUG ) {
-        std::cout << "NecromancerState ::showState" << std::endl;
+        std::cout << "SpellcasterState ::showState" << std::endl;
     }
 
-    std::cout << "I'm Necromancer." << std::endl;
     std::cout << "Damage: " << damage << ". Max hip points: " << hitPointsLimit << std::endl;
     std::cout << "Current hit points: " << hitPoints << std::endl;
     std::cout << "Current mana: " << mana << std::endl;

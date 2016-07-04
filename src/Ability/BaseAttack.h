@@ -7,12 +7,15 @@
 class Soldier;
 
 class BaseAttack : public Ability {
+    private:
+        static BaseAttack* instance;
+        BaseAttack() {};
 
     public:
-        BaseAttack() {};
         void attack(Unit& attacker, Unit& enemy);
         void counterAttack(Unit& counterAttacker, Unit& enemy);
 
+        static BaseAttack* createInstance();
 };
 
 #endif

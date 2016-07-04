@@ -12,6 +12,8 @@ class Soldier : public Wolf, public AbstractVampire {
 
     public:
         Soldier(const std::string& name, float maxHp, float damage);
+        ~Soldier();
+
         void description();
 };
 

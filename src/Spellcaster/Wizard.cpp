@@ -1,6 +1,6 @@
 #include "Wizard.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 Wizard::Wizard(const std::string& name, float maxHp, float damage, float mana) {
     if ( DEBUG ) {
@@ -9,8 +9,8 @@ Wizard::Wizard(const std::string& name, float maxHp, float damage, float mana) {
 
     isCombatMage = true;
     this->name = name;
-    this->state = new WizardState(maxHp, damage, mana);
-    this->ability = new BaseAttack();
+    this->state = new SpellcasterState(maxHp, damage, mana);
+    this->ability = BaseAttack::createInstance();
 
     spellBook.insert ( std::pair<std::string, Spell*>("Cruciatus", Cruciatus::createSpell()));
 }
@@ -20,7 +20,7 @@ void Wizard::description() {
         std::cout << "WIZARD::description" << std::endl;
     }
 
-    std::cout << "\nCombat mage - " << name << std::endl;
+    std::cout << "\nCombat mage - " << name << ". I'm wizard." << std::endl;
     state->showState();
 
 }
